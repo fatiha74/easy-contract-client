@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { DataService } from 'src/app/services/data.service';
 import { Entreprise } from 'src/app/models/entreprise';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,11 +14,13 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
 
-entreprise = new Entreprise()
+  entreprise = new Entreprise()
 
-registerForm!: FormGroup
+  registerForm!: FormGroup
 
-  constructor(private _fb:FormBuilder,private _dataService:DataService,private _route:Router) { }
+  errorPass = true
+
+  constructor(private _snackBar: MatSnackBar, private _fb: FormBuilder, private _dataService: DataService, private _route: Router) { }
 
   ngOnInit(): void {
 
@@ -33,6 +36,7 @@ registerForm!: FormGroup
       ville: [this.entreprise.ville, Validators.required],
       email: [this.entreprise.email, Validators.required],
       mdp: [this.entreprise.mdp, Validators.required],
+       confirmmdp: ["", Validators.required],
       siret: [this.entreprise.siret, Validators.required],
       raison_sociale: [this.entreprise.raison_sociale, Validators.required],
       code_ape: [this.entreprise.code_ape, Validators.required]
@@ -41,12 +45,37 @@ registerForm!: FormGroup
 
   }
 
-  onSubmit(){
+  onSubmit() {
 
-    
-    const profil = this.registerForm.value
-    const password = profil.password
-    const confirmPass = profil.confirmPassword
+
+    const form = this.registerForm.value
+    const password = form.mdp
+    const confirmPass = form.confirmmdp
+
+
+    if (password !== confirmPass) {
+      this.errorPass = true;
+      this._snackBar.open('mot de passe different', 'ok', {
+        verticalPosition: 'top',
+        horizontalPosition: 'end',
+        duration: 2000,
+        panelClass: ['red-snackbar']
+
+      })
+      return;
+    }
+
+    // on va fusionner les deux objets
+    //   je vais affecter a this user la fusion, form vient fusionner au user
+    this.entreprise = Object.assign(this.entreprise, form)
+
+
+    this._dataService.register(this.entreprise).subscribe((response: any) => {
+
+      console.log(response)
+
+    })
+
 
   }
 

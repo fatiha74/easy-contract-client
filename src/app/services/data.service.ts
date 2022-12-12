@@ -1,5 +1,6 @@
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 
+import { Entreprise } from '../models/entreprise';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
@@ -16,10 +17,15 @@ export class DataService {
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
-
+// ! LOGIN
   login(loginValues: any): Observable<any> {
     console.warn('dans login')
     return this._http.post(`${this.urlDB}/entreprise/login`, loginValues, { observe: 'response' });
+  }
+
+// ! REGISTER
+  register(registerValues:any):Observable<any>{
+    return this._http.post(`${this.urlDB}/entreprise/registerEntreprise`, registerValues, {observe: 'response'});
   }
 
 

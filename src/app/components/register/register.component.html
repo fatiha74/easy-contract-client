@@ -40,8 +40,19 @@
             </mat-form-field>
 
 
-            <mat-form-field appearance="fill" class="form-element">
-              <input matInput placeholder="Mot de passe" formControlName="mdp">
+
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label> Password
+              </mat-label>
+              <input matInput formControlName="mdp" required>
+              <mat-icon matSuffix>password</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label> Confirme Password
+              </mat-label>
+              <input matInput formControlName="confirmmdp" required>
+              <mat-icon matSuffix>password</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="fill" class="form-element">
