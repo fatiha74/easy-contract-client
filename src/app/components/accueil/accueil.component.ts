@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatFormField } from '@angular/material/form-field';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accueil',
@@ -7,16 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
-  onClick(a: boolean) {
-    if (a) {
-      console.log('entreprise')
-    } else {
-      console.log('salarie')
-    }
-  }
+
 }
 

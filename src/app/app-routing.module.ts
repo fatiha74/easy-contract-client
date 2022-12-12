@@ -6,12 +6,26 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
-    path: '',component:AccueilComponent
+    path: '', component:AccueilComponent
+
   },
   {
-    path: 'login',component:LoginComponent
+    path: 'entreprise/login',component:LoginComponent
+    // children:[
+    //   {path:'login,component:LoginComponent'}
+    // ]
+  },
+  // {
+  //   path: 'salarie',component:LoginComponent
+  //   // children:[
+  //   //   {path:'login,component:LoginComponent'}
+  //   // ]
 
-  }
+  // },
+  // {
+  //   path: 'login',component:LoginComponent
+
+  // }
 ];
 
 @NgModule({

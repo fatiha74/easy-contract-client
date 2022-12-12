@@ -25,14 +25,14 @@ export class TokenInterceptor implements HttpInterceptor {
     // si j'ai un token je dois inserer le token dans le header
     // *on recupere le token
     // methode static
-    const token = DataService.getToken()
-
+    const token = this._dataService.getToken()
+// console.log(token)
     let clone = request
 
     console.log(request.url)
 
     // * si on atteind le backend, propriete de httpRequest
-    if (request.url.includes(environment.API_URL + "api")) {
+    if (request.url.includes(`${environment.API_URL}` )) {
 
       //* on cloner un autre headers et on ajoute 'Authorisation'
       // * car on ne peut pas modifier on ne peut pas .append
@@ -49,7 +49,7 @@ export class TokenInterceptor implements HttpInterceptor {
       // * catchError operateur rxjs,
       // ! attrape les erreurs
       catchError((error: HttpErrorResponse) => {
-        let message = ""
+        let message = " Problème token"
         switch (error.status) {
           case 400: message = "Badrequest, erreur Identifiant ou Mot de passe "
             break;

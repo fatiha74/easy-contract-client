@@ -1,1 +1,65 @@
-<p>register works!</p>
+
+        <div class="form-container" layout="column">
+          <h1>Créer votre compte</h1>
+          <form class="container" [formGroup]="registerForm" (ngSubmit)="onSubmit()" layout="column">
+
+            <mat-form-field appearance="fill" class=" form-element">
+              <input matInput placeholder="Civilité" formControlName="civilite">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="form-element">
+              <input matInput placeholder="Nom" formControlName="nom">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="form-element">
+              <input matInput placeholder="Prénom" formControlName="prenom">
+            </mat-form-field>
+
+
+            <mat-form-field appearance="fill" class="form-element">
+              <input matInput placeholder="Télephone" formControlName="telephone">
+            </mat-form-field>
+
+
+            <mat-form-field appearance="fill" class="form-element">
+              <input matInput placeholder="Rue" formControlName="rue">
+            </mat-form-field>
+
+
+
+            <mat-form-field appearance="fill" class="form-element">
+              <input matInput placeholder="Cp" formControlName="cp">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="form-element">
+              <input matInput placeholder="Ville" formControlName="ville">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="form-element">
+              <input matInput placeholder="Email" formControlName="email">
+            </mat-form-field>
+
+
+            <mat-form-field appearance="fill" class="form-element">
+              <input matInput placeholder="Mot de passe" formControlName="mdp">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="form-element">
+              <input matInput placeholder="SIRET" formControlName="siret">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="form-element">
+              <input matInput placeholder="raison_sociale" formControlName="raison_sociale">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="form-element">
+              <input matInput placeholder="Code APE" formControlName="code_ape">
+            </mat-form-field>
+
+
+
+
+            <button mat-raised-button [disabled]="registerForm.invalid" color="primary" type="submit"   >Valider</button>
+
+          </form>
+        </div>

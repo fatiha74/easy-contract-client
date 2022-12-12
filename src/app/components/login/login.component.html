@@ -1,22 +1,25 @@
 <p>Connexion entreprise</p>
 <div>
-  <form class="form" layout="column" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form class="form" layout="column" [formGroup]="loginForm" (ngSubmit)="onSubmitConnexion()">
 
-
-      <label>Email</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
       <input matInput placeholder='email' formControlName="email">
+      <!-- <mat-icon matSuffix color="primary">local_post_office</mat-icon> -->
+    </mat-form-field>
 
-
-
-      <label>Password</label>
-      <input matInput placeholder="Password" formControlName="password">
-
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Password" formControlName="mdp">
+  
+    </mat-form-field>
 
     <div class="button">
       <span>
         <button mat-raised-button [disabled]="loginForm.invalid" color="primary" type="submit">Valider</button>
       </span>
-
     </div>
-  </form>
+
+   </form>
 </div>
+
