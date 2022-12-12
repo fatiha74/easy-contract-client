@@ -1,0 +1,22 @@
+<p>Connexion entreprise</p>
+<div>
+  <form class="form" layout="column" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+
+      <label>Email</label>
+      <input matInput placeholder='email' formControlName="email">
+
+
+
+      <label>Password</label>
+      <input matInput placeholder="Password" formControlName="password">
+
+
+    <div class="button">
+      <span>
+        <button mat-raised-button [disabled]="loginForm.invalid" color="primary" type="submit">Valider</button>
+      </span>
+
+    </div>
+  </form>
+</div>
