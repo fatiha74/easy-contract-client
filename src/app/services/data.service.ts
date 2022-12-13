@@ -17,21 +17,21 @@ export class DataService {
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
-// ! LOGIN
+  // ! LOGIN
   login(loginValues: any): Observable<any> {
     console.warn('dans login')
     return this._http.post(`${this.urlDB}/entreprise/login`, loginValues, { observe: 'response' });
   }
 
-// ! REGISTER
-  register(registerValues:any):Observable<any>{
-    return this._http.post(`${this.urlDB}/entreprise/registerEntreprise`, registerValues, {observe: 'response'});
+  // ! REGISTER
+  register(registerValues: any): Observable<any> {
+    return this._http.post(`${this.urlDB}/entreprise/registerEntreprise`, registerValues, { observe: 'response' });
   }
 
 
 
   // Cette méthode permet de récupérer le token via register
-   getToken(): string | null {
+  getToken(): string | null {
     // on recupere directement notre objet
     const newTkn = localStorage.getItem('token')
     if (newTkn) {
