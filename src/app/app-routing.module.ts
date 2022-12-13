@@ -4,6 +4,7 @@ import { AccueilComponent } from './components/accueil/accueil.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
+import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
@@ -21,7 +22,11 @@ const routes: Routes = [
     path: 'entreprise/register',component:RegisterComponent
   },
   {
-    path: 'overview',component:HeaderComponent
+    path: 'overview',component:HeaderComponent,
+    children:[
+      { path: 'profil', component: ProfileComponent },
+
+    ]
   }
   // {
   //   path: 'salarie',component:LoginComponent

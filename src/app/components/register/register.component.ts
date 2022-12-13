@@ -20,7 +20,12 @@ export class RegisterComponent implements OnInit {
 
   errorPass = true
 
-  constructor(private _snackBar: MatSnackBar, private _fb: FormBuilder, private _dataService: DataService, private _route: Router) { }
+  constructor(
+    private _snackBar: MatSnackBar,
+    private _fb: FormBuilder,
+    private _dataService: DataService,
+    private _route: Router
+      ) { }
 
   ngOnInit(): void {
 
@@ -76,7 +81,7 @@ export class RegisterComponent implements OnInit {
       localStorage.setItem('token', response.token)
 
     this._route.navigate(['/overview'])
-  
+
 
     })
 

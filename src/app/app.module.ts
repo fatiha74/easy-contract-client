@@ -20,6 +20,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { RegisterComponent } from './components/register/register.component';
 import { TokenInterceptorProvider } from './helpers/token.interceptor';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { TokenInterceptorProvider } from './helpers/token.interceptor';
     RegisterComponent,
     AccueilComponent,
     HeaderComponent,
+    ProfileComponent,
 
   ],
   imports: [

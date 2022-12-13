@@ -21,11 +21,16 @@ export class LoginComponent implements OnInit {
   tkn!: any
 
 
-  
+
   loginForm!: FormGroup
   // registerForm!:FormGroup
 
-  constructor(private _fb: FormBuilder, private _route: Router, private _dataService: DataService) { }
+  constructor(
+    private _fb: FormBuilder,
+    private _route: Router,
+    private _dataService: DataService
+    ) { }
+    
 
   ngOnInit(): void {
     console.warn('ok')
