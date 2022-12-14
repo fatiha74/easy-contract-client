@@ -35,6 +35,13 @@ export class ProfileComponent implements OnInit {
   }
   openDialog(){
     const dialogRef = this._matDialog.open( UpdateEntrepriseComponent, { data: this.myProfil })
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log(result)
+
+
+    })
+
   }
   onClick(){
 

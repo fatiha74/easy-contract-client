@@ -54,7 +54,7 @@ onSubmit(){
     const form = this.majForm.value
 
 
-
+console.log(form)
 
       // *on recupere le profile
       this._dataService.updateEntreprise(form).subscribe((response: any) => {
@@ -62,5 +62,12 @@ onSubmit(){
         console.warn(response)
       })
 
+
+      this._dataService.updateEntreprise(form).subscribe(response => {
+
+        // on close avec la deuxieme souscription
+        this._matDialogRef.close()
+
+      })
 }
 }
