@@ -21,6 +21,7 @@ import { NgModule } from '@angular/core';
 import { RegisterComponent } from './components/register/register.component';
 import { TokenInterceptorProvider } from './helpers/token.interceptor';
 import { ProfileComponent } from './components/profile/profile.component';
+import { UpdateEntrepriseComponent } from './modals/update-entreprise/update-entreprise.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     AccueilComponent,
     HeaderComponent,
     ProfileComponent,
+    UpdateEntrepriseComponent,
 
   ],
   imports: [

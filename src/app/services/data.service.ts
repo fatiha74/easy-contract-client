@@ -47,6 +47,14 @@ export class DataService {
     return this._http.get<Entreprise>(this.urlDB + "/entreprise/getProfileEntreprise", { headers: headers })
   }
 
+  // ! UPDATE
+updateEntreprise(registerValues: any): Observable<any> {
+  const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+  // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
+  return this._http.put<Entreprise>(this.urlDB + "/entreprise/update", { headers: headers })
+
+  }
+  
 //! GET PROFILE
   // getProfile():Observable<any>{
   //   return this._http.get(`${this.urlDB}/entreprise/getEntreprise`,{observe: 'response'})

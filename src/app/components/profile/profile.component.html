@@ -5,129 +5,148 @@
   </div>
 
 
-  <div class="contain">
+    <div class="contain">
 
-    <div>
-      <mat-form-field appearance="outline" *ngIf="isEdit; else a">
-        <mat-label>
-          Civilité
-        </mat-label>
-        <mat-icon matPrefix>person</mat-icon>
-        <input matInput [value]="myProfil[0].civilite">
-      </mat-form-field>
+      <div>
+        <mat-form-field appearance="outline" >
+          <mat-label>
+            Civilité
+          </mat-label>
+          <mat-icon matPrefix>person</mat-icon>
+          <input matInput [value]="myProfil[0].civilite" disabled="disabled">
+        </mat-form-field>
 
-      <ng-template #a>{{myProfil[0].civilite}}</ng-template>
+
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" >
+          <mat-label>
+            Nom
+          </mat-label>
+          <mat-icon matPrefix>person</mat-icon>
+          <input matInput [value]="myProfil[0].nom" disabled="disabled">
+        </mat-form-field>
+
+      </div>
+      <div>
+        <mat-form-field appearance="outline" >
+          <mat-label>
+            Prénom
+          </mat-label>
+          <mat-icon matPrefix>person</mat-icon>
+          <input matInput [value]="myProfil[0].prenom" disabled="disabled">
+        </mat-form-field>
+
+      </div>
     </div>
 
-    <div>
-      <mat-form-field appearance="outline" *ngIf="isEdit; else b">
-        <mat-label>
-          Nom
-        </mat-label>
-        <mat-icon matPrefix>person</mat-icon>
-        <input matInput [value]="myProfil[0].nom">
-      </mat-form-field>
-      <ng-template #b>{{myProfil[0].nom}}</ng-template>
+
+    <div class="contain">
+      <div>
+        <mat-form-field appearance="outline" >
+          <mat-label>
+            Rue
+          </mat-label>
+
+          <input matInput [value]=" myProfil[0].rue" disabled="disabled">
+        </mat-form-field>
+
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>
+            Code postal
+          </mat-label>
+
+          <input matInput [value]=" myProfil[0].cp" disabled="disabled">
+        </mat-form-field>
+
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>
+            Ville
+          </mat-label>
+
+          <input matInput [value]="myProfil[0].ville" disabled="disabled">
+        </mat-form-field>
+
+      </div>
     </div>
-    <div>
-      <mat-form-field appearance="outline" *ngIf="isEdit; else c">
-        <mat-label>
-          Prénom
-        </mat-label>
-        <mat-icon matPrefix>person</mat-icon>
-        <input matInput [value]="myProfil[0].prenom">
-      </mat-form-field>
-      <ng-template #c>{{myProfil[0].prenom}}</ng-template>
+    <div class="contain">
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>
+            Pays
+          </mat-label>
+          <input matInput [value]="myProfil[0].pays" disabled="disabled">
+        </mat-form-field>
+
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>
+            Email
+          </mat-label>
+          <mat-icon matPrefix>local_post_office</mat-icon>
+          <input matInput [value]="myProfil[0].email" disabled="disabled">
+        </mat-form-field>
+
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>
+            Téléphone
+          </mat-label>
+          <mat-icon matPrefix>phone</mat-icon>
+          <input matInput [value]="myProfil[0].telephone" disabled="disabled">
+        </mat-form-field>
+
+      </div>
     </div>
 
-    <div>
-      <mat-form-field appearance="outline" *ngIf="isEdit; else d">
-        <mat-label>
-          Email
-        </mat-label>
-        <mat-icon matPrefix>local_post_office</mat-icon>
-        <input matInput [value]="myProfil[0].email">
-      </mat-form-field>
-      <ng-template #d>{{myProfil[0].email}}</ng-template>
+    <div class="contain">
+      <div>
+        <mat-form-field appearance="outline" >
+          <mat-label>
+            Siret
+          </mat-label>
+          <input matInput [value]="myProfil[0].siret" disabled="disabled">
+        </mat-form-field>
+
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" >
+          <mat-label>
+            Raison sociale
+          </mat-label>
+          <input matInput [value]="myProfil[0].raison_sociale" disabled="disabled">
+        </mat-form-field>
+
+
+      </div>
+      <div>
+        <mat-form-field appearance="outline" >
+          <mat-label>
+            code_ape
+          </mat-label>
+
+          <input matInput [value]="myProfil[0].code_ape" disabled="disabled">
+        </mat-form-field>
+
+      </div>
     </div>
 
-  </div>
-  <div class="contain">
-    <div>
-      <mat-form-field appearance="outline" *ngIf="isEdit; else e">
-        <mat-label>
-          Rue
-        </mat-label>
 
-        <input matInput [value]=" myProfil[0].rue">
-      </mat-form-field>
-      <ng-template #d>{{myProfil[0].rue}}</ng-template>
+    <div class="button">
+
+      <button mat-raised-button color="primary" type="submit" (click)="openDialog()">Modifier</button>
+
     </div>
 
-    <div>
-      <mat-form-field appearance="outline" *ngIf="isEdit; else f">
-        <mat-label>
-          Code postal
-        </mat-label>
-
-        <input matInput [value]=" myProfil[0].cp">
-      </mat-form-field>
-      <ng-template #f>{{myProfil[0].cp}}</ng-template>
-    </div>
-    <div>
-      <mat-form-field appearance="outline" *ngIf="isEdit; else g">
-        <mat-label>
-          Ville
-        </mat-label>
-
-        <input matInput [value]="myProfil[0].ville">
-      </mat-form-field>
-      <ng-template #g>{{myProfil[0].ville}}</ng-template>
-    </div>
-
-    <mat-form-field appearance="outline" *ngIf="isEdit; else h">
-      <mat-label>
-        Pays
-      </mat-label>
-      <input matInput [value]="myProfil[0].pays">
-    </mat-form-field>
-    <ng-template #h>{{myProfil[0].pays}}</ng-template>
-  </div>
-  <div class="contain">
-    <div>
-      <mat-form-field appearance="outline">
-        <mat-label>
-          Téléphone
-        </mat-label>
-        <mat-icon matPrefix>phone</mat-icon>
-        <input matInput [value]="myProfil[0].telephone">
-      </mat-form-field>
-    </div>
-    <mat-form-field appearance="outline">
-      <mat-label>
-        Siret
-      </mat-label>
-
-      <input matInput [value]="myProfil[0].siret">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>
-        Raison sociale
-      </mat-label>
-
-      <input matInput [value]="myProfil[0].raison_sociale">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>
-        code_ape
-      </mat-label>
-
-      <input matInput [value]="myProfil[0].code_ape">
-    </mat-form-field>
-  </div>
-  <div class="button">
-    <span>
-      <button mat-raised-button color="primary" type="submit" (click)="isEdit=!isEdit">Valider les modification</button>
-    </span>
-  </div>
 </section>
