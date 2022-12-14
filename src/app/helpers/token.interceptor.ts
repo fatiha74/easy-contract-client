@@ -49,7 +49,7 @@ export class TokenInterceptor implements HttpInterceptor {
       // * catchError operateur rxjs,
       // ! attrape les erreurs
       catchError((error: HttpErrorResponse) => {
-        let message = " Problème token"
+        let message = " "
         switch (error.status) {
           case 400: message = "Badrequest, erreur Identifiant ou Mot de passe "
             break;

@@ -11,6 +11,8 @@ export class ProfileComponent implements OnInit {
 
   myProfil!: any
 
+  isEdit=false
+
   constructor(
     private _dataService : DataService
     ) { }
@@ -18,7 +20,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
 
         // *on recupere le profile
-        this._dataService.getProfile().subscribe((response: Entreprise) => {
+        this._dataService.getProfile().subscribe((response: any) => {
           this.myProfil = response
           console.warn(response)
         })

@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     private _route: Router,
     private _dataService: DataService
     ) { }
-    
+
 
   ngOnInit(): void {
     console.warn('ok')
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
       this.tkn = response.body.token
 
       localStorage.setItem('token', this.tkn)
-      // this._route.navigate(['overview'])
+       this._route.navigate(['overview'])
 
     })
   }

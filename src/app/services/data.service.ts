@@ -4,7 +4,6 @@ import { Entreprise } from '../models/entreprise';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { Salarie } from '../models/salarie';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -29,7 +28,6 @@ export class DataService {
   }
 
 
-
   // Cette méthode permet de récupérer le token via register
   getToken(): string | null {
     // on recupere directement notre objet
@@ -39,6 +37,22 @@ export class DataService {
     }
     return null
   }
+
+
+  // ! GET PROFILE
+  // * on recupere tous les infos de la personne qui se connecte
+  getProfile(): Observable<Entreprise> {
+    const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+    // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
+    return this._http.get<Entreprise>(this.urlDB + "/entreprise/getProfileEntreprise", { headers: headers })
+  }
+
+//! GET PROFILE
+  // getProfile():Observable<any>{
+  //   return this._http.get(`${this.urlDB}/entreprise/getEntreprise`,{observe: 'response'})
+  // }
+
+
 
 
 
