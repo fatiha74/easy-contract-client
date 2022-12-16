@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
@@ -18,10 +19,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
+import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TokenInterceptorProvider } from './helpers/token.interceptor';
-import { ProfileComponent } from './components/profile/profile.component';
 import { UpdateEntrepriseComponent } from './modals/update-entreprise/update-entreprise.component';
+import { LoginSalarieComponent } from './components/login-salarie/login-salarie.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,11 @@ import { UpdateEntrepriseComponent } from './modals/update-entreprise/update-ent
     HeaderComponent,
     ProfileComponent,
     UpdateEntrepriseComponent,
+    LoginSalarieComponent,
 
   ],
   imports: [
+    MatCardModule,
     MatListModule,
     MatSidenavModule,
     MatSnackBarModule,

@@ -47,10 +47,8 @@ export class LoginComponent implements OnInit {
     // *on recupere les données du formulaire
     const form = this.loginForm.value
 
-
     this.entreprise = Object.assign(this.entreprise, form)
     console.log('entreprise', this.entreprise)
-
 
     this._dataService.login(this.entreprise).subscribe((response: any) => {
 

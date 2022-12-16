@@ -60,14 +60,10 @@ console.log(form)
       this._dataService.updateEntreprise(form).subscribe((response: any) => {
 
         console.warn(response)
-      })
-
-
-      this._dataService.updateEntreprise(form).subscribe(response => {
-
-        // on close avec la deuxieme souscription
         this._matDialogRef.close()
-
       })
+
+
+
 }
 }

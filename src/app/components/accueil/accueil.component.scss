@@ -1,9 +1,29 @@
+section{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-between;
+}
 h1
 {
   text-align: center;
 }
-div{
+.center{
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: center;
+
+
+  width: 50%;
+  height:50%;
+
 
 }
+.button{
+  display: flex;
+  justify-content: space-around;
+}
+
+
