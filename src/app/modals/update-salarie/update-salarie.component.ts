@@ -1,33 +1,26 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { Data } from '@angular/router';
-import { DataService } from 'src/app/services/data.service';
-import { Entreprise } from 'src/app/models/entreprise';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
+import { DataService } from 'src/app/services/data.service';
+
 @Component({
-  selector: 'app-update-entreprise',
-  templateUrl: './update-entreprise.component.html',
-  styleUrls: ['./update-entreprise.component.scss']
+  selector: 'app-update-salarie',
+  templateUrl: './update-salarie.component.html',
+  styleUrls: ['./update-salarie.component.scss']
 })
-export class UpdateEntrepriseComponent implements OnInit {
+export class UpdateSalarieComponent implements OnInit {
 
-  entreprise = new Entreprise()
 
-  majForm!: FormGroup
-
+majForm!:FormGroup
   constructor(
-    private _fb: FormBuilder,
+    private _fb : FormBuilder,
     @Inject(MAT_DIALOG_DATA) public infos: any,
     private _dataService: DataService,
-    private _matDialogRef: MatDialogRef<UpdateEntrepriseComponent>
+    private _matDialogRef: MatDialogRef<UpdateSalarieComponent>,
   ) { }
 
   ngOnInit(): void {
-
-    console.log(this.infos)
-
     this.majForm = this._fb.group({
 
 
@@ -40,14 +33,15 @@ export class UpdateEntrepriseComponent implements OnInit {
       ville: [this.infos[0].ville, Validators.required],
       email: [this.infos[0].email, Validators.required],
       mdp: ["", Validators.required],
-      confirmmdp: ["", Validators.required],
-      siret: [this.infos[0].siret, Validators.required],
-      raison_sociale: [this.infos[0].raison_sociale, Validators.required],
-      code_ape: [this.infos[0].code_ape, Validators.required]
+       confirmmdp: ["", Validators.required],
+       nom_jeune_fille:[this.infos[0].nom_jeune_fille],
+       num_ss:[this.infos[0].num_ss, Validators.required],
+
 
     })
-
   }
+
+
   onSubmit() {
 
     // *on recupere les données du formulaire
@@ -55,11 +49,15 @@ export class UpdateEntrepriseComponent implements OnInit {
     console.log(form)
 
     // *on recupere le profile
-    this._dataService.updateEntreprise(form).subscribe((response: any) => {
+    this._dataService.updateSalarie(form).subscribe((response: any) => {
 
-      console.warn(response)
+      console.warn("update",response)
       this._matDialogRef.close()
     })
 
   }
+  onCancel(){
+    this._matDialogRef.close()
+  }
+
 }

@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileSalarieComponent } from './components/profile-salarie/profile-salarie.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RegisterSalarieComponent } from './components/register-salarie/register-salarie.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,9 @@ const routes: Routes = [
     path: 'entreprise/register',component:RegisterComponent
   },
   {
+    path: 'salarie/register',component:RegisterSalarieComponent
+  },
+  {
     path: 'overview',component:HeaderComponent,
     children:[
       { path: 'profil', component: ProfileComponent },
@@ -47,7 +51,7 @@ const routes: Routes = [
   {
     path: 'overview_s',component:HeaderComponent,
     children:[
-      { path: 'profil', component: ProfileComponent },
+      { path: 'profil', component: ProfileSalarieComponent },
 
     ]
   }

@@ -1,5 +1,4 @@
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-import { TokenInterceptorProviderSalarie, TokenSalarieInterceptor } from './helpers/token-salarie.interceptor';
 
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { AppComponent } from './app.component';
@@ -7,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HeaderComponent } from './components/header/header.component';
+import { HeaderSalarieComponent } from './components/header-salarie/header-salarie.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { LoginSalarieComponent } from './components/login-salarie/login-salarie.component';
@@ -22,11 +22,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileSalarieComponent } from './components/profile-salarie/profile-salarie.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RegisterSalarieComponent } from './components/register-salarie/register-salarie.component';
 import { TokenInterceptorProvider } from './helpers/token.interceptor';
 import { UpdateEntrepriseComponent } from './modals/update-entreprise/update-entreprise.component';
-import { HeaderSalarieComponent } from './components/header-salarie/header-salarie.component';
-import { ProfileSalarieComponent } from './components/profile-salarie/profile-salarie.component';
+import { UpdateSalarieComponent } from './modals/update-salarie/update-salarie.component';
+import { ContratComponent } from './components/contrat/contrat.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,9 @@ import { ProfileSalarieComponent } from './components/profile-salarie/profile-sa
     LoginSalarieComponent,
     HeaderSalarieComponent,
     ProfileSalarieComponent,
+    UpdateSalarieComponent,
+    RegisterSalarieComponent,
+    ContratComponent,
 
 
   ],
@@ -61,7 +66,7 @@ import { ProfileSalarieComponent } from './components/profile-salarie/profile-sa
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [ TokenInterceptorProvider,TokenInterceptorProviderSalarie],
+  providers: [ TokenInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { DataSalarieService } from 'src/app/services/data-salarie.service';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 import { Salarie } from 'src/app/models/salarie';
@@ -24,7 +23,7 @@ export class LoginSalarieComponent implements OnInit {
   constructor(
     private _fb:FormBuilder,
     private _route:Router,
-    private _dataSalarieService:DataSalarieService
+    private _dataService:DataService
   ) { }
 
   ngOnInit(): void {
@@ -44,13 +43,13 @@ export class LoginSalarieComponent implements OnInit {
     this.salarie = Object.assign(this.salarie, form)
     console.log('salarie', this.salarie)
 
-    this._dataSalarieService.login(this.salarie).subscribe((response: any) => {
+    this._dataService.loginSalarie(this.salarie).subscribe((response: any) => {
 
       console.warn( response)
 
-      this.tkn = response.body.token_s
+      this.tkn = response.body.token
 
-      localStorage.setItem('token_s', this.tkn)
+      localStorage.setItem('token', this.tkn)
        this._route.navigate(['overview_s'])
 
     })

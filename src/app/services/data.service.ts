@@ -4,6 +4,7 @@ import { Entreprise } from '../models/entreprise';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import{Salarie} from '../models/salarie'
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -22,13 +23,28 @@ export class DataService {
     return this._http.post(`${this.urlDB}/entreprise/login`, loginValues, { observe: 'response' });
   }
 
-
-
   // ! REGISTER
   register(registerValues: any): Observable<any> {
     return this._http.post(`${this.urlDB}/entreprise/registerEntreprise`, registerValues, { observe: 'response' });
   }
 
+
+//  *****************************************************
+// ********************** SALARIE ***********************
+// ******************************************************
+
+    // ! LOGIN SALARIE
+    loginSalarie(loginValues: any): Observable<any> {
+      console.warn('dans login')
+      return this._http.post(`${this.urlDB}/salarie/login`, loginValues, { observe: 'response' });
+    }
+
+  // ! REGISTER SALARIE
+  registerSalarie(registerValues: any): Observable<any> {
+    return this._http.post(`${this.urlDB}/salarie/register`, registerValues, { observe: 'response' });
+  }
+
+// ***********************************************************************************************************************
 
   // Cette méthode permet de récupérer le token via register
   getToken(): string | null {
@@ -50,18 +66,33 @@ export class DataService {
   }
 
   // ! UPDATE
-updateEntreprise(registerValues: any): Observable<any> {
-  const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
-  // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
-  return this._http.put<Entreprise>(this.urlDB + "/entreprise/profile", { headers: headers, formulaire: registerValues })
+  updateEntreprise(registerValues: any): Observable<any> {
+    const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+    // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
+    return this._http.put<Entreprise>(this.urlDB + "/entreprise/profile", { headers: headers, formulaire: registerValues })
 
   }
 
-//! GET PROFILE
-  // getProfile():Observable<any>{
-  //   return this._http.get(`${this.urlDB}/entreprise/getEntreprise`,{observe: 'response'})
-  // }
+//  *****************************************************
+// ********************** SALARIE ***********************
+// ******************************************************
 
+// ! GET PROFILE
+  // * on recupere tous les infos de la personne qui se connecte
+  getProfileSalarie(): Observable<Salarie> {
+    const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+    // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
+    return this._http.get<Salarie>(this.urlDB + "/salarie/profile", { headers: headers })
+  }
+
+
+  // ! UPDATE
+  updateSalarie(values: any): Observable<any> {
+    const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+    // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
+    return this._http.put<Salarie>(this.urlDB + "/salarie/profile", { headers: headers, formulaire: values })
+
+  }
 
 
 

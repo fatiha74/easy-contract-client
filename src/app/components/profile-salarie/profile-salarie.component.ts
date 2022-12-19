@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { DataSalarieService } from 'src/app/services/data-salarie.service';
+import { DataService } from 'src/app/services/data.service';
 import { MatDialog } from '@angular/material/dialog';
+import { UpdateSalarieComponent } from 'src/app/modals/update-salarie/update-salarie.component';
 
 @Component({
   selector: 'app-profile-salarie',
@@ -17,7 +18,7 @@ export class ProfileSalarieComponent implements OnInit {
 
 
   constructor(
-    private _dataSalarieService : DataSalarieService,
+    private _dataService : DataService,
     private _fb:FormBuilder,
     private _matDialog: MatDialog
   ) { }
@@ -25,11 +26,28 @@ export class ProfileSalarieComponent implements OnInit {
   ngOnInit(): void {
 
       // *on recupere le profile
-      this._dataSalarieService.getProfile().subscribe((response: any) => {
+      this._dataService.getProfileSalarie().subscribe((response: any) => {
+        this.myProfil = response
+        console.warn("hello",response)
+
+
+      })
+
+  }
+
+  openDialog(){
+    const dialogRef = this._matDialog.open( UpdateSalarieComponent, { data: this.myProfil })
+
+
+    dialogRef.afterClosed().subscribe((result:any) => {
+
+console.log(result)
+      this._dataService.getProfileSalarie().subscribe((response: any) => {
         this.myProfil = response
         console.warn(response)
       })
 
+    })
   }
 
 }
