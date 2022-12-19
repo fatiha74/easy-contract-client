@@ -1,4 +1,5 @@
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { TokenInterceptorProviderSalarie, TokenSalarieInterceptor } from './helpers/token-salarie.interceptor';
 
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
+import { LoginSalarieComponent } from './components/login-salarie/login-salarie.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -23,7 +25,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TokenInterceptorProvider } from './helpers/token.interceptor';
 import { UpdateEntrepriseComponent } from './modals/update-entreprise/update-entreprise.component';
-import { LoginSalarieComponent } from './components/login-salarie/login-salarie.component';
+import { HeaderSalarieComponent } from './components/header-salarie/header-salarie.component';
+import { ProfileSalarieComponent } from './components/profile-salarie/profile-salarie.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { LoginSalarieComponent } from './components/login-salarie/login-salarie.
     ProfileComponent,
     UpdateEntrepriseComponent,
     LoginSalarieComponent,
+    HeaderSalarieComponent,
+    ProfileSalarieComponent,
+
 
   ],
   imports: [
@@ -55,7 +61,7 @@ import { LoginSalarieComponent } from './components/login-salarie/login-salarie.
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [ TokenInterceptorProvider],
+  providers: [ TokenInterceptorProvider,TokenInterceptorProviderSalarie],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

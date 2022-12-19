@@ -1,0 +1,45 @@
+<p>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <button mat-icon-button class="example-icon" (click)="opened=!opened">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>EASY CONTRACT</span>
+            <span class="example-spacer"></span>
+            <span>Espace salarié</span>
+            <span class="example-spacer"></span>
+
+            <button mat-button (click)="onDisconect()">
+                <mat-icon>logout</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</p>
+
+
+
+<mat-drawer-container class="sidenav-container">
+    <mat-drawer [(opened)]="opened" mode="side">
+        <mat-nav-list>
+
+            <a mat-list-item routerLink="/overview_s/profil" routerLinkActive="active" color="primary">
+                <mat-icon>account_circle</mat-icon>Profil
+            </a>
+            <a mat-list-item routerLink="/overview/chat" routerLinkActive="active">
+                <mat-icon>chat</mat-icon>Gérer mes salariés
+            </a>
+            <a mat-list-item routerLink="/overview/contrat" routerLinkActive="active">
+                <mat-icon>folder_open</mat-icon>Gérer mes contrats
+            </a>
+            <a mat-list-item routerLink="/overview/creercontrat" routerLinkActive="active">
+                <mat-icon>person_search</mat-icon>Genérer un contrat
+            </a>
+
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content class="w-100">
+        <section>
+            <router-outlet></router-outlet>
+        </section>
+    </mat-drawer-content>
+</mat-drawer-container>

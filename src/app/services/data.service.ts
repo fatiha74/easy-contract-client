@@ -16,11 +16,13 @@ export class DataService {
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
-  // ! LOGIN
+  // ! LOGIN ENTREPRISE
   login(loginValues: any): Observable<any> {
     console.warn('dans login')
     return this._http.post(`${this.urlDB}/entreprise/login`, loginValues, { observe: 'response' });
   }
+
+
 
   // ! REGISTER
   register(registerValues: any): Observable<any> {
@@ -74,7 +76,7 @@ updateEntreprise(registerValues: any): Observable<any> {
   // *
   clearToken() {
     // * on indique quel token on clean
-    localStorage.removeItem('digichat-token')
+    localStorage.removeItem('token')
     // *on redirige sur login
     this._router.navigate((['/']))
   }
