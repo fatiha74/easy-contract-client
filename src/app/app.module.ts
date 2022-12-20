@@ -32,6 +32,7 @@ import { RegisterSalarieComponent } from './components/register-salarie/register
 import { TokenInterceptorProvider } from './helpers/token.interceptor';
 import { UpdateEntrepriseComponent } from './modals/update-entreprise/update-entreprise.component';
 import { UpdateSalarieComponent } from './modals/update-salarie/update-salarie.component';
+import { ContratModalComponent } from './modals/contrat-modal/contrat-modal.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { UpdateSalarieComponent } from './modals/update-salarie/update-salarie.c
     UpdateSalarieComponent,
     RegisterSalarieComponent,
     ContratComponent,
+    ContratModalComponent,
 
 
   ],

@@ -4,7 +4,7 @@
     </mat-card-header>
 
     <mat-card-content>
-        <form class="container" [formGroup]="contratForm" (ngSubmit)="onSubmit()" layout="column">
+        <form class="container" [formGroup]="contratForm" (ngSubmit)="openDialog()" layout="column">
             <div>
 
                 <mat-form-field appearance="fill" *ngIf="salarieContrat">
@@ -17,7 +17,6 @@
                 </mat-form-field>
 <p>{{selectedValue}}</p>
             </div>
-
             <div>
 
                 <mat-radio-group aria-label="Select an option" formControlName="type_contrat">
