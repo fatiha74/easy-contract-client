@@ -73,6 +73,13 @@ export class DataService {
 
   }
 
+  // ! POUR LE CONTRAT
+  getAllSalarie(): Observable<Entreprise> {
+    const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+    // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
+    return this._http.get<any>(this.urlDB + "/entreprise/addcontrat", { headers: headers })
+  }
+
 //  *****************************************************
 // ********************** SALARIE ***********************
 // ******************************************************

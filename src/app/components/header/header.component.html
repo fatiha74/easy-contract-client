@@ -10,7 +10,8 @@
     </button>
     <span>EASY CONTRACT</span>
     <span class="example-spacer"></span>
-
+    <span>Espace entreprise</span>
+    <span class="example-spacer"></span>
     <button mat-button (click)="onDisconect()">
       <mat-icon>logout</mat-icon>
     </button>
@@ -27,14 +28,14 @@
       <a mat-list-item routerLink="/overview/profil" routerLinkActive="active" color="primary">
         <mat-icon>account_circle</mat-icon>Profil
       </a>
-      <a mat-list-item routerLink="/overview/chat" routerLinkActive="active">
-        <mat-icon>chat</mat-icon>Gérer mes salariés
+      <a mat-list-item routerLink="/overview/salaries" routerLinkActive="active">
+        <mat-icon>people</mat-icon>Gérer mes salariés
       </a>
-      <a mat-list-item routerLink="/overview/contrat" routerLinkActive="active">
-        <mat-icon>folder_open</mat-icon>Gérer mes contrats
+      <a mat-list-item routerLink="/overview/contrats" routerLinkActive="active">
+        <mat-icon>content_copy</mat-icon>Gérer mes contrats
       </a>
-      <a mat-list-item routerLink="/overview/creercontrat" routerLinkActive="active">
-        <mat-icon>person_search</mat-icon>Genérer un contrat
+      <a mat-list-item routerLink="/overview/addcontrat" routerLinkActive="active">
+        <mat-icon>post_add</mat-icon>Genérer un contrat
       </a>
 
     </mat-nav-list>

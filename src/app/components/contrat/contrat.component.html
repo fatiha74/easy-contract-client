@@ -1,1 +1,70 @@
-<p>contrat works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Créer un contrat</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form class="container" [formGroup]="contratForm" (ngSubmit)="onSubmit()" layout="column">
+            <div>
+
+                <mat-form-field appearance="fill" *ngIf="salarieContrat">
+                    <mat-label>SALARIE</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let item of salarieContrat" [value]="item.salarie_id">
+                            {{item.nom}} {{item.prenom}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                
+            </div>
+            <div>
+
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">CDI</mat-radio-button>
+                    <mat-radio-button value="2">CDD</mat-radio-button>
+                </mat-radio-group>
+
+            </div>
+            <div>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Temps plein</mat-radio-button>
+                    <mat-radio-button value="2">Temps partiel</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class=" form-element">
+                    <mat-label>
+                        Date début
+                    </mat-label>
+                    <input matInput type="date" formControlName="periode">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class=" form-element">
+                    <mat-label>
+                        Date fin
+                    </mat-label>
+                    <input matInput type="date" formControlName="periode">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class=" form-element">
+                    <mat-label>
+                        Periode essai
+                    </mat-label>
+                    <input matInput type="date" formControlName="periode">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class=" form-element">
+                    <mat-label>
+                        Rémunération
+                    </mat-label>
+                    <input matInput type="date" formControlName="periode">
+                </mat-form-field>
+            </div>
+
+        </form>
+    </mat-card-content>
+
+</mat-card>

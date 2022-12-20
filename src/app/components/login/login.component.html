@@ -7,19 +7,20 @@
       </mat-card-header>
     <mat-card-content>
   <form class="form" layout="column" [formGroup]="loginForm" (ngSubmit)="onSubmitConnexion()">
-
+<div>
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
       <input matInput placeholder='email' formControlName="email">
        <mat-icon matSuffix color="primary">local_post_office</mat-icon>
     </mat-form-field>
-
+    </div>
+<div>
     <mat-form-field appearance="outline">
       <mat-label>Password</mat-label>
       <input matInput placeholder="Password" formControlName="mdp">
 
     </mat-form-field>
-
+</div>
     <div class="button">
       <span>
         <button mat-raised-button [disabled]="loginForm.invalid" color="primary" type="submit">Valider</button>

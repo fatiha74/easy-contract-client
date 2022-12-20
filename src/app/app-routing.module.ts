@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { AccueilComponent } from './components/accueil/accueil.component';
+import { ContratComponent } from './components/contrat/contrat.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeaderSalarieComponent } from './components/header-salarie/header-salarie.component';
 import { LoginComponent } from './components/login/login.component';
@@ -31,7 +32,7 @@ const routes: Routes = [
   {
     path: 'overview_s',component:HeaderSalarieComponent,
     children:[
-      { path: 'profil', component: ProfileSalarieComponent },
+      { path: 'profil', component: ProfileSalarieComponent }
 
     ]
   },
@@ -45,6 +46,7 @@ const routes: Routes = [
     path: 'overview',component:HeaderComponent,
     children:[
       { path: 'profil', component: ProfileComponent },
+      { path: 'addcontrat', component: ContratComponent }
 
     ]
   },
