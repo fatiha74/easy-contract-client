@@ -9,24 +9,25 @@
 
                 <mat-form-field appearance="fill" *ngIf="salarieContrat">
                     <mat-label>SALARIE</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="salarieSelect" >
                         <mat-option *ngFor="let item of salarieContrat" [value]="item.salarie_id">
                             {{item.nom}} {{item.prenom}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-                
-            </div>
+
+
+            </div><p>{{selectedValue}}</p>
             <div>
 
-                <mat-radio-group aria-label="Select an option">
+                <mat-radio-group aria-label="Select an option" formControlName="type_contrat">
                     <mat-radio-button value="1">CDI</mat-radio-button>
                     <mat-radio-button value="2">CDD</mat-radio-button>
                 </mat-radio-group>
 
             </div>
             <div>
-                <mat-radio-group aria-label="Select an option">
+                <mat-radio-group aria-label="Select an option" formControlName="duree">
                     <mat-radio-button value="1">Temps plein</mat-radio-button>
                     <mat-radio-button value="2">Temps partiel</mat-radio-button>
                 </mat-radio-group>
@@ -36,7 +37,7 @@
                     <mat-label>
                         Date début
                     </mat-label>
-                    <input matInput type="date" formControlName="periode">
+                    <input matInput type="date" formControlName="date_debut">
                 </mat-form-field>
             </div>
             <div>
@@ -44,7 +45,7 @@
                     <mat-label>
                         Date fin
                     </mat-label>
-                    <input matInput type="date" formControlName="periode">
+                    <input matInput type="date" formControlName="date_fin">
                 </mat-form-field>
             </div>
             <div>
@@ -60,8 +61,16 @@
                     <mat-label>
                         Rémunération
                     </mat-label>
-                    <input matInput type="date" formControlName="periode">
+                    <input matInput formControlName="remuneration">
                 </mat-form-field>
+            </div>
+            <div>
+
+                <mat-radio-group aria-label="Select an option" formControlName="motif">
+                    <mat-radio-button value="1">Remplacement</mat-radio-button>
+                    <mat-radio-button value="2">Surcroit</mat-radio-button>
+                </mat-radio-group>
+
             </div>
 
         </form>

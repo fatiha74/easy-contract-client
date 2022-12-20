@@ -10,7 +10,7 @@ import { Salarie } from 'src/app/models/salarie';
   styleUrls: ['./contrat.component.scss']
 })
 export class ContratComponent implements OnInit {
-
+  selectedValue!: string;
 salarieContrat!:any[]
   contratForm!: FormGroup
 
