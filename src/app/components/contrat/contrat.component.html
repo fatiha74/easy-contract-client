@@ -9,15 +9,15 @@
 
                 <mat-form-field appearance="fill" *ngIf="salarieContrat">
                     <mat-label>SALARIE</mat-label>
-                    <mat-select formControlName="salarieSelect" >
+                    <mat-select formControlName="salarieSelect" [(ngModel)]="selectedValue">
                         <mat-option *ngFor="let item of salarieContrat" [value]="item.salarie_id">
                             {{item.nom}} {{item.prenom}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
+<p>{{selectedValue}}</p>
+            </div>
 
-
-            </div><p>{{selectedValue}}</p>
             <div>
 
                 <mat-radio-group aria-label="Select an option" formControlName="type_contrat">
@@ -72,6 +72,14 @@
                 </mat-radio-group>
 
             </div>
+
+            <div class="button">
+                <span>
+                    <button mat-raised-button [disabled]="contratForm.invalid" color="primary"
+                        type="submit">Valider</button>
+                </span>
+            </div>
+
 
         </form>
     </mat-card-content>
