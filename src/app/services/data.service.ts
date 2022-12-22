@@ -60,25 +60,44 @@ export class DataService {
   // ! GET PROFILE
   // * on recupere tous les infos de la personne qui se connecte
   getProfile(): Observable<Entreprise> {
-    const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+    // const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
     // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
-    return this._http.get<Entreprise>(this.urlDB + "/entreprise/profile", { headers: headers })
+    return this._http.get<Entreprise>(this.urlDB + "/entreprise/profile")
   }
 
   // ! UPDATE
   updateEntreprise(registerValues: any): Observable<any> {
-    const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+    // const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
     // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
-    return this._http.put<Entreprise>(this.urlDB + "/entreprise/profile", { headers: headers, formulaire: registerValues })
+    return this._http.put<Entreprise>(this.urlDB + "/entreprise/profile", { formulaire: registerValues })
 
   }
-
+// ******************************************
+// ****** **************contrat *************
+// ******************************************
   // ! POUR LE CONTRAT
   getAllSalarie(): Observable<Entreprise> {
     const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
     // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
-    return this._http.get<any>(this.urlDB + "/entreprise/addcontrat", { headers: headers })
+    return this._http.get<any>(this.urlDB + "/entreprise/addcontrat")
   }
+
+// ! GET SALARIE SELECTED
+getOneSalarie(id_salarie:any):Observable<any> {
+  // const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+  // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
+ return this._http.get<any>(this.urlDB + "/entreprise/addcontrat/"+ id_salarie)
+}
+
+
+// ! POST le contrat
+createContrat(values:any):Observable<any> {
+  // const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+  // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
+ return this._http.post<any>(`${this.urlDB}/entreprise/addcontrat`, values, { observe: 'response' })
+
+}
+
 
 //  *****************************************************
 // ********************** SALARIE ***********************
@@ -100,8 +119,6 @@ export class DataService {
     return this._http.put<Salarie>(this.urlDB + "/salarie/profile", { headers: headers, formulaire: values })
 
   }
-
-
 
 
   // * on recupere tous les infos de la personne qui se connecte

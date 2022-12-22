@@ -27,8 +27,10 @@ export class ProfileComponent implements OnInit {
 
     // *on recupere le profile
     this._dataService.getProfile().subscribe((response: any) => {
+      console.log("getprofile",response)
+
       this.myProfil = response
-      console.warn(response)
+
     })
 
 
@@ -40,27 +42,12 @@ export class ProfileComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: any) => {
 
-      console.log(result)
-      this._dataService.getProfile().subscribe((response: any) => {
-        this.myProfil = response
-        console.warn(response)
-      })
+      this.myProfil = result
+
+
 
     })
   }
-  onClick() {
 
-    // *on recupere les données du formulaire
-    const form = this.majForm.value
-
-    // *on recupere le profile
-    this._dataService.updateEntreprise(form).subscribe((response: any) => {
-      console.warn(response)
-    })
-
-  }
-  onCancel(): void {
-    this.isEdit = !this.isEdit
-  }
 
 }

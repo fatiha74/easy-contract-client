@@ -19,31 +19,31 @@ export class UpdateEntrepriseComponent implements OnInit {
 
   constructor(
     private _fb: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public infos: any,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private _dataService: DataService,
     private _matDialogRef: MatDialogRef<UpdateEntrepriseComponent>
   ) { }
 
   ngOnInit(): void {
 
-    console.log(this.infos)
+
 
     this.majForm = this._fb.group({
 
 
-      civilite: [this.infos[0].civilite, Validators.required],
-      nom: [this.infos[0].nom, Validators.required],
-      prenom: [this.infos[0].prenom, Validators.required],
-      telephone: [this.infos[0].telephone, Validators.required],
-      rue: [this.infos[0].rue, Validators.required],
-      cp: [this.infos[0].cp, Validators.required],
-      ville: [this.infos[0].ville, Validators.required],
-      email: [this.infos[0].email, Validators.required],
+      civilite: [this.data.civilite, Validators.required],
+      nom: [this.data.nom, Validators.required],
+      prenom: [this.data.prenom, Validators.required],
+      telephone: [this.data.telephone, Validators.required],
+      rue: [this.data.rue, Validators.required],
+      cp: [this.data.cp, Validators.required],
+      ville: [this.data.ville, Validators.required],
+      email: [this.data.email, Validators.required],
       mdp: ["", Validators.required],
       confirmmdp: ["", Validators.required],
-      siret: [this.infos[0].siret, Validators.required],
-      raison_sociale: [this.infos[0].raison_sociale, Validators.required],
-      code_ape: [this.infos[0].code_ape, Validators.required]
+      siret: [this.data.siret, Validators.required],
+      raison_sociale: [this.data.raison_sociale, Validators.required],
+      code_ape: [this.data.code_ape, Validators.required]
 
     })
 
@@ -52,14 +52,20 @@ export class UpdateEntrepriseComponent implements OnInit {
 
     // *on recupere les données du formulaire
     const form = this.majForm.value
-    console.log(form)
+
 
     // *on recupere le profile
     this._dataService.updateEntreprise(form).subscribe((response: any) => {
 
+      console.log("dans modale",form)
       console.warn(response)
-      this._matDialogRef.close()
+      // pour mettre à jour dans profile
+      this._matDialogRef.close({data: form})
     })
 
+  }
+  
+  onCancel(){
+    this._matDialogRef.close()
   }
 }

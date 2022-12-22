@@ -15,7 +15,12 @@ export class ContratComponent implements OnInit {
   selectedValue!: string;
 salarieContrat!:any[]
   contratForm!: FormGroup
-
+statuts:any[] =[
+  {value:'Cadre',viewValue:'Cadre'},
+  {value:'Employé',viewValue:'Employé'},
+  {value:'Agent de maitrise',viewValue:'Agent de maitrise'},
+  {value:'Ouvrier',viewValue:'Ouvrier'}
+]
   constructor(
     private _dataService:DataService,
     private _fb:FormBuilder,
@@ -36,14 +41,16 @@ salarieContrat!:any[]
 this.contratForm = this._fb.group({
 
 
-  salarieSelect: ["", Validators.required],
+  fki_salarie: ["", Validators.required],
  type_contrat: ["", Validators.required],
-  duree: ["", Validators.required],
+  is_fulltime: ["", Validators.required],
   date_debut: ["", Validators.required],
   date_fin: ["", Validators.required],
-  periode: ["", Validators.required],
+  periode_essai: ["", Validators.required],
   remuneration: ["", Validators.required],
   motif: ["", Validators.required],
+  fonction : ["",Validators.required],
+  statut :["",Validators.required]
 
 
 })

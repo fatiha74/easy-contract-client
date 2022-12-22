@@ -41,11 +41,7 @@ export class ProfileSalarieComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result:any) => {
 
-console.log(result)
-      this._dataService.getProfileSalarie().subscribe((response: any) => {
-        this.myProfil = response
-        console.warn(response)
-      })
+      this.myProfil=result
 
     })
   }

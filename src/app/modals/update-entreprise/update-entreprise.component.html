@@ -1,9 +1,9 @@
-<div class="form-container" layout="column" *ngIf="infos">
- 
+<div class="form-container" layout="column" *ngIf="data">
+
   <form class="container" [formGroup]="majForm" (ngSubmit)="onSubmit()" layout="column">
 
     <mat-form-field appearance="outline" class=" form-element">
-      <input matInput placeholder="Civilité" [value]="infos[0].civilite" formControlName="civilite" >
+      <input matInput placeholder="Civilité" [value]="data.civilite" formControlName="civilite" >
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="form-element">
@@ -70,6 +70,7 @@
 
 
     <button mat-raised-button [disabled]="majForm.invalid" color="primary" type="submit">Valider</button>
+    <button mat-raised-button color="accent" type="submit" (click)="onCancel()">Annuler</button>
 
   </form>
 </div>

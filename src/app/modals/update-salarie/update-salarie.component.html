@@ -1,5 +1,5 @@
 <span>Modifier mon profile</span>
-<div class="form-container" layout="column" *ngIf="infos">
+<div class="form-container" layout="column" *ngIf="data">
 
     <form class="container" [formGroup]="majForm" (ngSubmit)="onSubmit()" layout="column">
 
@@ -71,7 +71,7 @@
         <mat-icon matSuffix>password</mat-icon>
       </mat-form-field>
 
-      <mat-form-field appearance="outline" class="form-element" *ngIf="infos[0].nom_jeune_fille">
+      <mat-form-field appearance="outline" class="form-element" *ngIf="data.nom_jeune_fille">
         <mat-label> Nom de jeune fille
         </mat-label>
         <input matInput placeholder="Nom de jeune fille" formControlName="nom_jeune_fille">

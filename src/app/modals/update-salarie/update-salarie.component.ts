@@ -15,7 +15,7 @@ export class UpdateSalarieComponent implements OnInit {
 majForm!:FormGroup
   constructor(
     private _fb : FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public infos: any,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private _dataService: DataService,
     private _matDialogRef: MatDialogRef<UpdateSalarieComponent>,
   ) { }
@@ -24,18 +24,18 @@ majForm!:FormGroup
     this.majForm = this._fb.group({
 
 
-      civilite: [this.infos[0].civilite, Validators.required],
-      nom: [this.infos[0].nom, Validators.required],
-      prenom: [this.infos[0].prenom, Validators.required],
-      telephone: [this.infos[0].telephone, Validators.required],
-      rue: [this.infos[0].rue, Validators.required],
-      cp: [this.infos[0].cp, Validators.required],
-      ville: [this.infos[0].ville, Validators.required],
-      email: [this.infos[0].email, Validators.required],
+      civilite: [this.data.civilite, Validators.required],
+      nom: [this.data.nom, Validators.required],
+      prenom: [this.data.prenom, Validators.required],
+      telephone: [this.data.telephone, Validators.required],
+      rue: [this.data.rue, Validators.required],
+      cp: [this.data.cp, Validators.required],
+      ville: [this.data.ville, Validators.required],
+      email: [this.data.email, Validators.required],
       mdp: ["", Validators.required],
        confirmmdp: ["", Validators.required],
-       nom_jeune_fille:[this.infos[0].nom_jeune_fille],
-       num_ss:[this.infos[0].num_ss, Validators.required],
+       nom_jeune_fille:[this.data.nom_jeune_fille],
+       num_ss:[this.data.num_ss, Validators.required],
 
 
     })
@@ -52,7 +52,7 @@ majForm!:FormGroup
     this._dataService.updateSalarie(form).subscribe((response: any) => {
 
       console.warn("update",response)
-      this._matDialogRef.close()
+      this._matDialogRef.close({data:form})
     })
 
   }

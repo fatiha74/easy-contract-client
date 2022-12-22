@@ -9,26 +9,26 @@
 
                 <mat-form-field appearance="fill" *ngIf="salarieContrat">
                     <mat-label>SALARIE</mat-label>
-                    <mat-select formControlName="salarieSelect" [(ngModel)]="selectedValue">
+                    <mat-select formControlName="fki_salarie" >
                         <mat-option *ngFor="let item of salarieContrat" [value]="item.salarie_id">
                             {{item.nom}} {{item.prenom}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-<p>{{selectedValue}}</p>
+
             </div>
             <div>
 
                 <mat-radio-group aria-label="Select an option" formControlName="type_contrat">
-                    <mat-radio-button value="1">CDI</mat-radio-button>
-                    <mat-radio-button value="2">CDD</mat-radio-button>
+                    <mat-radio-button value="CDI">CDI</mat-radio-button>
+                    <mat-radio-button value="CDD">CDD</mat-radio-button>
                 </mat-radio-group>
 
             </div>
             <div>
-                <mat-radio-group aria-label="Select an option" formControlName="duree">
-                    <mat-radio-button value="1">Temps plein</mat-radio-button>
-                    <mat-radio-button value="2">Temps partiel</mat-radio-button>
+                <mat-radio-group aria-label="Select an option" formControlName="is_fulltime">
+                    <mat-radio-button value="Temps plein">Temps plein</mat-radio-button>
+                    <mat-radio-button value="Temps partiel">Temps partiel</mat-radio-button>
                 </mat-radio-group>
             </div>
             <div>
@@ -38,29 +38,34 @@
                     </mat-label>
                     <input matInput type="date" formControlName="date_debut">
                 </mat-form-field>
-            </div>
-            <div>
                 <mat-form-field appearance="outline" class=" form-element">
                     <mat-label>
                         Date fin
                     </mat-label>
                     <input matInput type="date" formControlName="date_fin">
                 </mat-form-field>
-            </div>
-            <div>
                 <mat-form-field appearance="outline" class=" form-element">
                     <mat-label>
                         Periode essai
                     </mat-label>
-                    <input matInput type="date" formControlName="periode">
+                    <input matInput type="date" formControlName="periode_essai">
                 </mat-form-field>
             </div>
             <div>
+                <mat-form-field appearance="outline" *ngIf="salarieContrat">
+                    <mat-label>Statut</mat-label>
+                    <mat-select formControlName="statut">
+                        <mat-option *ngFor="let item of statuts" [value]="item.value">
+                            {{item.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
                 <mat-form-field appearance="outline" class=" form-element">
                     <mat-label>
-                        Rémunération
+                        Fonction
                     </mat-label>
-                    <input matInput formControlName="remuneration">
+                    <input matInput formControlName="fonction">
                 </mat-form-field>
             </div>
             <div>
@@ -71,7 +76,14 @@
                 </mat-radio-group>
 
             </div>
-
+            <div>
+                <mat-form-field appearance="outline" class=" form-element">
+                    <mat-label>
+                        Rémunération
+                    </mat-label>
+                    <input matInput formControlName="remuneration">
+                </mat-form-field>
+            </div>
             <div class="button">
                 <span>
                     <button mat-raised-button [disabled]="contratForm.invalid" color="primary"
