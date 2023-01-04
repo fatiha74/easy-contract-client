@@ -19,12 +19,11 @@
     <h2>salarie num :{{data.value.fki_salarie}}</h2>
     <div class="salarie">
         <div> {{salarieProfil.civilite}} {{salarieProfil.nom}} {{salarieProfil.prenom}} </div>
-        <div>{{salarieProfil.rue}} {{salarieProfil.cp}} {{salarieProfil.ville}} </div>
-
-
-
+        <div>{{salarieProfil.rue}} </div>
+        <div>{{salarieProfil.cp}} {{salarieProfil.ville}} </div>
     </div>
-    <ul>
+    <div>
+         <ul>
 
 
         <li>type contrat :<span>{{infos.type_contrat}}</span></li>
@@ -38,9 +37,9 @@
         <li>Fonction :<span>{{infos.fonction}}</span></li>
 
     </ul>
-    <button mat-button color="primary" (click)="onClick()"> Créer le contrat</button>
+</div>
+    <button  mat-raised-button color="primary" (click)="onClick()"> Créer le contrat</button>
     <button mat-raised-button color="accent" type="submit" (click)="onCancel()">Annuler</button>
-
 </body>
 
 </html>

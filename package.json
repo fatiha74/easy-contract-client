@@ -1,5 +1,6 @@
 {
   "name": "easy-contract",
+  "author": "Fatiha",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -21,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.10.1",
     "jspdf": "^2.5.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

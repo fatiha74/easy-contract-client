@@ -33,6 +33,7 @@ import { TokenInterceptorProvider } from './helpers/token.interceptor';
 import { UpdateEntrepriseComponent } from './modals/update-entreprise/update-entreprise.component';
 import { UpdateSalarieComponent } from './modals/update-salarie/update-salarie.component';
 import { ContratModalComponent } from './modals/contrat-modal/contrat-modal.component';
+import { PdfComponent } from './modals/pdf/pdf.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ContratModalComponent } from './modals/contrat-modal/contrat-modal.comp
     RegisterSalarieComponent,
     ContratComponent,
     ContratModalComponent,
+    PdfComponent,
 
 
   ],

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div *ngIf="data" class=contrat id="text">
+        <img [src]=' "http://localhost:5000/signatureentreprise/"+data.raison_sociale+"/logo.jpg" 'alt="">
+
+        <h1>Contrat de travail</h1>
+        <h2>{{data.type_contrat}}</h2>
+
+        <h3> Entre la société</h3>
+        <p>
+            {{data.raison_sociale}} <br>
+            {{data.rue_entreprise}} <br>
+            {{data.cp_entreprise}} {{data.ville_entreprise}}<br>
+
+           Siret : {{data.siret}} Code APE : {{data.code_ape}}
+        </p>
+
+        <h3> Etablissement </h3>
+        <p>
+            {{data.raison_sociale}} <br>
+            {{data.rue_entreprise}} <br>
+            {{data.cp_entreprise}} {{data.ville_entreprise}}<br>
+
+            {{data.siret}} {{data.code_ape}}
+        </p>
+
+        <p>Ce contrat travail a fait l'objet d'une déclaration unique d'embauche auprès de
+            cette URSSAF.</p>
+
+        <h3>Représenté par</h3>
+        {{data.nom_entreprise}} {{data.prenom_entreprise}}
+
+        <p>D'une part,</p>
+
+        <h3>Et le collaborateur</h3>
+        <p>
+            {{data.nom_salarie}} {{data.prenom_salarie}} <br>
+            {{data.rue_salarie}} <br>
+            {{data.cp_salarie}} {{data.ville_salarie}} <br>
+            né(e) le : {{data.date_naissance | date: "dd/MM/yyyy"}} à {{data.lieu_naissance}} <br>
+            Numéro SS : {{data.num_ss}}
+        </p>
+
+        <p>D’autre part,</p>
+
+        <h3>IL EST CONVENU CE QUI SUIT :</h3>
+
+        <p>Type de contrat : {{data.type_contrat}}</p>
+        <p>Date d'entrée en entreprise : {{data.date_debut | date: "dd/MM/yyyy" }}</p>
+        <p>Date de fin de contrat : {{data.date_fin | date: "dd/MM/yyyy"}}</p>
+        <p>Motif : {{data.motif}}</p>
+
+        <p>Période d'essai jusqu'au : {{data.periode_essaiessai | date: "dd/MM/yyyy"}} inclus </p>
+
+        <p>Fonction : {{data.fonction}}</p>
+        <p>Une polyvalence sur les autres secteurs d’activité est demandée en
+            fonction des éventuelles nécessités du service.</p>
+        <p>Statut : {{data.statut}}</p>
+        <p> Rémunération : {{data.remuneration}} € brut mensuel</p>
+
+        <p>Durée du travail : {{data.is_fulltime}}</p>
+        <p>Lieu de travail : Site Principal</p>
+
+
+        <p>Fait à {{data.ville_entreprise}} </p>
+        <p>Le {{data.date_debut  | date: "dd/MM/yyyy"}}</p>
+        <p>En double exemplaire</p>
+
+        <p>        Signature</p>
+
+
+        <div class="signature">
+            <div>{{data.nom_entreprise}} {{data.prenom_entreprise}}</div>
+    <img [src]=' "http://localhost:5000/signatureentreprise/"+data.nom_entreprise+"/signature.jpg" 'alt="">
+
+            <div> {{data.nom}} {{data.prenom}}</div>
+        </div>
+
+</div>
+        <div style="display:flex; align-items:center; justify-content:center">
+            <button mat-raised-button color="primary" (click)="downloadPDF()" >Télécharger en format PDF</button>
+            <!-- <button mat-raised-button color="primary" (click)="downloadDOCX()">Télécharger en format DOCX</button> -->
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="node_modules/html2canvas/dist/html2canvas.min.js"></script>
+    <script src="node_modules/jspdf/dist/jspdf.min.js"></script>
+</body>
+</html>
