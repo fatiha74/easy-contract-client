@@ -72,6 +72,23 @@ export class DataService {
     return this._http.put<Entreprise>(this.urlDB + "/entreprise/profile", { formulaire: registerValues })
 
   }
+
+    // ! liste de mes salariés
+
+    getAllMySalaries(): Observable<any> {
+      // const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+      // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
+      return this._http.get<any>(this.urlDB + "/entreprise/mesSalaries")
+    }
+
+    // ! liste de tous les contrats
+
+    getAllMyContratEntreprise(): Observable<any> {
+      // const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+      // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
+      return this._http.get<any>(this.urlDB + "/entreprise/mesContrats")
+    }
+
   // ******************************************
   // ****** **************contrat *************
   // ******************************************
@@ -126,6 +143,10 @@ export class DataService {
     return this._http.put<Salarie>(this.urlDB + "/salarie/profile", { headers: headers, formulaire: values })
 
   }
+
+
+
+
 
 
   // * on recupere tous les infos de la personne qui se connecte

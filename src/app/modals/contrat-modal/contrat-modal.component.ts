@@ -54,7 +54,11 @@ export class ContratModalComponent implements OnInit {
 
         console.log("le contrat cree", values)
         this._matDialogRef.close()
-        const dialogRef = this._matDialog.open(PdfComponent, { data: values})
+        const dialogRef = this._matDialog.open(PdfComponent, {
+           data: values,
+           height: '800px',
+           width: '900px'
+          })
 
         dialogRef.afterClosed().subscribe((result: any) => {
 

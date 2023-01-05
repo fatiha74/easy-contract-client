@@ -6,6 +6,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HeaderSalarieComponent } from './components/header-salarie/header-salarie.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginSalarieComponent } from './components/login-salarie/login-salarie.component';
+import { MesContratsComponent } from './components/mes-contrats/mes-contrats.component';
+import { MesSalariesComponent } from './components/mes-salaries/mes-salaries.component';
 import { NgModule } from '@angular/core';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileSalarieComponent } from './components/profile-salarie/profile-salarie.component';
@@ -46,7 +48,9 @@ const routes: Routes = [
     path: 'overview',component:HeaderComponent,
     children:[
       { path: 'profil', component: ProfileComponent },
-      { path: 'addcontrat', component: ContratComponent }
+      { path: 'addcontrat', component: ContratComponent },
+      {path:'salaries',component:MesSalariesComponent},
+      {path:'contrats',component:MesContratsComponent}
 
     ]
   },

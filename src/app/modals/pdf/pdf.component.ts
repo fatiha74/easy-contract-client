@@ -14,9 +14,6 @@ import * as jsPDF from 'jspdf';
 })
 export class PdfComponent implements OnInit {
 
-
-
-
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private _dataService: DataService,
@@ -24,7 +21,6 @@ export class PdfComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
 
   }
 
@@ -40,6 +36,10 @@ export class PdfComponent implements OnInit {
 
     html2pdf().from(element).set(opt).save();
   }
+
+
+
+
 
 
 }

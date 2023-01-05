@@ -34,6 +34,8 @@ import { UpdateEntrepriseComponent } from './modals/update-entreprise/update-ent
 import { UpdateSalarieComponent } from './modals/update-salarie/update-salarie.component';
 import { ContratModalComponent } from './modals/contrat-modal/contrat-modal.component';
 import { PdfComponent } from './modals/pdf/pdf.component';
+import { MesSalariesComponent } from './components/mes-salaries/mes-salaries.component';
+import { MesContratsComponent } from './components/mes-contrats/mes-contrats.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { PdfComponent } from './modals/pdf/pdf.component';
     ContratComponent,
     ContratModalComponent,
     PdfComponent,
+    MesSalariesComponent,
+    MesContratsComponent,
 
 
   ],
