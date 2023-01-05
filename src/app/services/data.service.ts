@@ -89,6 +89,14 @@ export class DataService {
       return this._http.get<any>(this.urlDB + "/entreprise/mesContrats")
     }
 
+      // ! liste de tous les contrats en cours
+
+      getContratEnCours(): Observable<any> {
+      // const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
+      // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
+      return this._http.get<any>(this.urlDB + "/entreprise/contratsEncours")
+    }
+
   // ******************************************
   // ****** **************contrat *************
   // ******************************************

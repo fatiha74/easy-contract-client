@@ -28,6 +28,7 @@ export class ContratModalComponent implements OnInit {
     this.infos = this.data.value
 
     console.log("id SALARIE", this.infos.fki_salarie)
+    
     this._dataService.getOneSalarie(this.infos.fki_salarie).subscribe((response: any) => {
 
       this.salarieProfil = response
