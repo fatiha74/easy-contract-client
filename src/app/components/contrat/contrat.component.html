@@ -25,13 +25,13 @@
                 </mat-radio-group>
 
             </div>
-            <div *ngIf="contratForm.value.type_contrat=='CDI'">
+            <div >
                 <mat-radio-group aria-label="Select an option" formControlName="is_fulltime">
                     <mat-radio-button value="Temps plein">Temps plein</mat-radio-button>
                     <mat-radio-button value="Temps partiel">Temps partiel</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div>
+            <div *ngIf="contratForm.value.type_contrat=='CDD'">
                 <mat-form-field appearance="outline" class=" form-element">
                     <mat-label>
                         Date début
