@@ -25,7 +25,7 @@ export class DataService {
 
   // ! REGISTER
   register(registerValues: any): Observable<any> {
-    return this._http.post(`${this.urlDB}/entreprise/registerEntreprise`, registerValues, { observe: 'response' });
+    return this._http.post(`${this.urlDB}/entreprise/register`, registerValues, { observe: 'response' });
   }
 
 

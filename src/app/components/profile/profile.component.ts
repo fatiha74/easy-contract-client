@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
 
     // *on recupere le profile
     this._dataService.getProfile().subscribe((response: any) => {
-      console.log("getprofile",response)
+      console.log("getprofile", response)
 
       this.myProfil = response
 
@@ -41,8 +41,10 @@ export class ProfileComponent implements OnInit {
 
 
     dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        this.myProfil = result
+      }
 
-      this.myProfil = result
 
     })
   }

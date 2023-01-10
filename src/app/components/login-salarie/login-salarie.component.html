@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
 <div>
     <mat-card>
         <mat-card-header>
@@ -36,4 +36,40 @@
         </mat-card-content>
     </mat-card>
 </div>
-</section>
+</section> -->
+<div class="container">
+    <section>
+      <mat-card>
+        <mat-card-header>
+            <mat-card-title>Connexion Salarié</mat-card-title>
+
+          </mat-card-header>
+        <mat-card-content>
+      <form class="form" layout="column" [formGroup]="loginForm" (ngSubmit)="onSubmitConnexion()">
+    <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder='email' formControlName="email">
+           <mat-icon matSuffix color="primary">local_post_office</mat-icon>
+        </mat-form-field>
+        </div>
+    <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" formControlName="mdp">
+
+        </mat-form-field>
+    </div>
+        <div class="button">
+          <span>
+            <button mat-raised-button [disabled]="loginForm.invalid" color="primary" type="submit">Valider</button>
+          </span>
+        </div>
+
+       </form>
+       <span>Vous n'avez pas encore de compte?</span><br>
+       <a routerLink="/entreprise/register">Créer un compte ici</a>
+       </mat-card-content>
+       </mat-card>
+      </section>
+    </div>

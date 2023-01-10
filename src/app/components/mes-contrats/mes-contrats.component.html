@@ -12,7 +12,7 @@
 <div  >
     <mat-card class="example-card" *ngFor="let contrat of allContratFiltered">
         <mat-card-header>
-          <mat-card-title>{{contrat.nom}}</mat-card-title> <mat-card-title>{{contrat.type_contrat}}</mat-card-title>
+          <mat-card-title>{{contrat.nom}}</mat-card-title> <mat-card-title align="end">{{contrat.type_contrat}}</mat-card-title>
           <mat-card-subtitle >Date Fin :{{contrat.date_fin | date}}</mat-card-subtitle>
           <mat-card-subtitle >Statut :{{contrat.statut}}</mat-card-subtitle>
         </mat-card-header>
@@ -26,7 +26,7 @@
     </div>
 
     <div *ngIf="!isChecked">
-        <mat-card class="example-card" *ngFor="let contrat of allContratFiltered">
+        <mat-card class="example-card" *ngFor="let contrat of allContratFilteredEncours">
             <mat-card-header>
               <mat-card-title>{{contrat.nom}}</mat-card-title> <mat-card-title>{{contrat.type_contrat}}</mat-card-title>
               <mat-card-subtitle >Date Fin :{{contrat.date_fin | date}}</mat-card-subtitle>
