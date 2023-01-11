@@ -55,7 +55,6 @@ export class LoginComponent implements OnInit {
       console.warn( response)
 
       this.tkn = response.body.token
-
       localStorage.setItem('token', this.tkn)
        this._route.navigate(['overview'])
 
