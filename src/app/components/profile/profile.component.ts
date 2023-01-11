@@ -45,6 +45,7 @@ export class ProfileComponent implements OnInit {
       if (result) {
         console.log(result,"if")
         this.myProfil = result
+        return window.location.reload()
       }
 
 

@@ -86,11 +86,6 @@ export class RegisterSalarieComponent implements OnInit {
       localStorage.setItem('token', this.tkn)
       console.log(response.token)
       this._route.navigate(['/overview_s'])
-
-
     })
-
-
   }
-
 }
