@@ -56,7 +56,6 @@ export class RegisterSalarieComponent implements OnInit {
 
   onSubmit() {
 
-
     const form = this.registerForm.value
     const password = form.mdp
     const confirmPass = form.confirmmdp
