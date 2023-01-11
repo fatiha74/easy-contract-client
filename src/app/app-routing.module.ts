@@ -53,14 +53,14 @@ const routes: Routes = [
       {path:'contrats',component:MesContratsComponent}
 
     ]
-  },
-  {
-    path: 'overview_s',component:HeaderComponent,
-    children:[
-      { path: 'profil', component: ProfileSalarieComponent },
-
-    ]
   }
+  // {
+  //   path: 'overview_s',component:HeaderComponent,
+  //   children:[
+  //     { path: 'profil', component: ProfileSalarieComponent },
+
+  //   ]
+  // }
   // {
   //   path: 'salarie',component:LoginComponent
   //   // children:[
