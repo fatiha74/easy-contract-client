@@ -60,11 +60,11 @@ export class UpdateEntrepriseComponent implements OnInit {
       console.log("dans modale",form)
       console.warn(response)
       // pour mettre à jour dans profile
-      this._matDialogRef.close({data: form})
+      this._matDialogRef.close({data: response})
     })
 
   }
-  
+
   onCancel(){
     this._matDialogRef.close()
   }
