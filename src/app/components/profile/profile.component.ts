@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
 
 
     dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(result)
+      console.log(result,"ok after close")
       if (result) {
         console.log(result,"if")
         this.myProfil = result
