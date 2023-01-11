@@ -69,7 +69,7 @@ export class DataService {
   updateEntreprise(registerValues: any): Observable<any> {
     // const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
     // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
-    return this._http.put<Entreprise>(this.urlDB + "/entreprise/updateprofile", { formulaire: registerValues })
+    return this._http.put<Entreprise>(this.urlDB + "/entreprise/profile", { formulaire: registerValues })
 
   }
 
