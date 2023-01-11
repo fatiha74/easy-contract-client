@@ -34,7 +34,12 @@ const routes: Routes = [
   {
     path: 'overview_s',component:HeaderSalarieComponent,
     children:[
-      { path: 'profil', component: ProfileSalarieComponent }
+      { path: 'profil', component: ProfileSalarieComponent
+    // ,canActivate: [AuthentrepriseGuard]
+   },
+   { path: 'contrat', component: ProfileSalarieComponent
+   // ,canActivate: [AuthentrepriseGuard]
+  }
 
     ]
   },
@@ -47,10 +52,18 @@ const routes: Routes = [
   {
     path: 'overview',component:HeaderComponent,
     children:[
-      { path: 'profil', component: ProfileComponent },
-      { path: 'addcontrat', component: ContratComponent },
-      {path:'salaries',component:MesSalariesComponent},
-      {path:'contrats',component:MesContratsComponent}
+      { path: 'profil', component: ProfileComponent
+      // ,canActivate: [AuthentrepriseGuard]
+     },
+      { path: 'addcontrat', component: ContratComponent
+ // ,canActivate: [AuthentrepriseGuard]
+    },
+      {path:'salaries',component:MesSalariesComponent
+     // ,canActivate: [AuthentrepriseGuard]
+    },
+      {path:'contrats',component:MesContratsComponent
+     // ,canActivate: [AuthentrepriseGuard]
+    }
 
     ]
   }
