@@ -77,6 +77,7 @@ export class RegisterComponent implements OnInit {
 
     this._dataService.register(this.entreprise).subscribe((response: any) => {
 
+console.log(response.token);
 
       localStorage.setItem('token', response.token)
 

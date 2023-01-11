@@ -44,7 +44,7 @@ export class RegisterSalarieComponent implements OnInit {
       email: [this.salarie.email, Validators.required],
       mdp: [this.salarie.mdp, Validators.required],
       confirmmdp: ["", Validators.required],
-      nom_jeune_fille: ["", Validators.required],
+      nom_jeune_fille: [""],
       num_ss: [this.salarie.num_ss, Validators.required],
       date_naissance: [this.salarie.date_naissance, Validators.required],
       lieu_naissance: [this.salarie.lieu_naissance, Validators.required],
