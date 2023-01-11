@@ -79,7 +79,7 @@ export class RegisterComponent implements OnInit {
 
 console.log(response.token);
 
-      localStorage.setItem('token', response.token)
+      localStorage.setItem('token', response.body.token)
 
     this._route.navigate(['/overview'])
 
