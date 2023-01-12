@@ -1,75 +1,86 @@
+<div class="form-container" layout="column">
+  <h1>Créer votre compte entreprise</h1>
+  <form class="container" [formGroup]="registerForm" (ngSubmit)="onSubmit()" layout="column">
 
-        <div class="form-container" layout="column">
-          <h1>Créer votre compte entreprise</h1>
-          <form class="container" [formGroup]="registerForm" (ngSubmit)="onSubmit()" layout="column">
+    <mat-form-field appearance="outline" class=" form-element">
+      <mat-label> Civilité
+      </mat-label>
+      <input matInput placeholder="Civilité" formControlName="civilite">
+    </mat-form-field>
 
-            <mat-form-field appearance="fill" class=" form-element">
-              <input matInput placeholder="Civilité" formControlName="civilite">
-            </mat-form-field>
+    <mat-form-field appearance="outline" class="form-element">
+      <mat-label> Nom
+      </mat-label>
+      <input matInput placeholder="Nom" formControlName="nom">
+    </mat-form-field>
 
-            <mat-form-field appearance="fill" class="form-element">
-              <input matInput placeholder="Nom" formControlName="nom">
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="form-element">
-              <input matInput placeholder="Prénom" formControlName="prenom">
-            </mat-form-field>
-
-
-            <mat-form-field appearance="fill" class="form-element">
-              <input matInput placeholder="Télephone" formControlName="telephone">
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="form-element">
-              <input matInput placeholder="Rue" formControlName="rue">
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="form-element">
-              <input matInput placeholder="Cp" formControlName="cp">
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="form-element">
-              <input matInput placeholder="Ville" formControlName="ville">
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="form-element">
-              <input matInput placeholder="Email" formControlName="email">
-            </mat-form-field>
+    <mat-form-field appearance="outline" class="form-element">
+      <mat-label> Prénom
+      </mat-label>
+      <input matInput placeholder="Prénom" formControlName="prenom">
+    </mat-form-field>
 
 
+    <mat-form-field appearance="outline" class="form-element">
+      <mat-label> Téléphone
+      </mat-label>
+      <input matInput placeholder="Télephone" formControlName="telephone">
+    </mat-form-field>
 
-            <mat-form-field class="form-field" appearance="outline">
-              <mat-label> Password
-              </mat-label>
-              <input matInput formControlName="mdp" required>
-              <mat-icon matSuffix>password</mat-icon>
-            </mat-form-field>
+    <mat-form-field appearance="outline" class="form-element">
+      <mat-label> Rue
+      </mat-label>
+      <input matInput placeholder="Rue" formControlName="rue">
+    </mat-form-field>
 
-            <mat-form-field class="form-field" appearance="outline">
-              <mat-label> Confirme Password
-              </mat-label>
-              <input matInput formControlName="confirmmdp" required>
-              <mat-icon matSuffix>password</mat-icon>
-            </mat-form-field>
+    <mat-form-field appearance="outline" class="form-element">
+      <mat-label> Code postal
+      </mat-label>
+      <input matInput placeholder="Cp" formControlName="cp">
+    </mat-form-field>
 
-            <mat-form-field appearance="fill" class="form-element">
-              <input matInput placeholder="SIRET" formControlName="siret">
-            </mat-form-field>
+    <mat-form-field appearance="outline" class="form-element">
+      <mat-label> Password
+      </mat-label>Ville
+      <input matInput placeholder="Ville" formControlName="ville">
+    </mat-form-field>
 
-            <mat-form-field appearance="fill" class="form-element">
-              <input matInput placeholder="raison_sociale" formControlName="raison_sociale">
-            </mat-form-field>
+    <mat-form-field appearance="outline" class="form-element">
+      <mat-label> Email
+      </mat-label>
+      <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
 
-            <mat-form-field appearance="fill" class="form-element">
-              <input matInput placeholder="Code APE" formControlName="code_ape">
-            </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label> Password
+      </mat-label>
+      <input matInput formControlName="mdp" required>
+      <mat-icon matSuffix>password</mat-icon>
+    </mat-form-field>
 
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label> Confirme Password
+      </mat-label>
+      <input matInput formControlName="confirmmdp" required>
+      <mat-icon matSuffix>password</mat-icon>
+    </mat-form-field>
 
+    <mat-form-field appearance="outline" class="form-element">
+      <input matInput placeholder="SIRET" formControlName="siret">
+    </mat-form-field>
 
-<div>
-  <button mat-raised-button [disabled]="registerForm.invalid" color="primary" type="submit"   >Valider</button>
+    <mat-form-field appearance="outline" class="form-element">
+      <input matInput placeholder="raison_sociale" formControlName="raison_sociale">
+    </mat-form-field>
 
+    <mat-form-field appearance="outline" class="form-element">
+      <input matInput placeholder="Code APE" formControlName="code_ape">
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button [disabled]="registerForm.invalid" color="primary" type="submit">Valider</button>
+
+    </div>
+
+  </form>
 </div>
-
-          </form>
-        </div>

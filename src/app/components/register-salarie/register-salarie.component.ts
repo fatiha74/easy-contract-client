@@ -15,6 +15,10 @@ export class RegisterSalarieComponent implements OnInit {
 
  // stock token
   tkn!: any
+isWomen!:any
+civilite:any[] =[
+  {value:'Madame',viewValue:'Madame'},
+  {value:'Monsieur',viewValue:'Monsieur'}]
 
   salarie = new Salarie()
 

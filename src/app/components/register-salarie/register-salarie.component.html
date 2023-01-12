@@ -1,5 +1,5 @@
 <section class="container">
-    <div >
+    <div class="formulaire">
 
         <mat-card>
             <mat-card-header>
@@ -9,11 +9,20 @@
             <mat-card-content>
                 <form class="container" [formGroup]="registerForm" (ngSubmit)="onSubmit()" layout="column">
                     <div>
-                        <mat-form-field appearance="outline" class=" form-element">
+                        <!-- <mat-form-field appearance="outline" class=" form-element">
                             <mat-label>
                                 Civilité
                             </mat-label>
                             <input matInput formControlName="civilite">
+                        </mat-form-field> -->
+
+                        <mat-form-field appearance="fill" >
+                            <mat-label>Civilité</mat-label>
+                            <mat-select formControlName="civilite" >
+                                <mat-option *ngFor="let item of civilite" [value]="item.value">
+                                    {{item.value}}
+                                </mat-option>
+                            </mat-select>
                         </mat-form-field>
 
                         <mat-form-field appearance="outline" class="form-element">
@@ -23,7 +32,7 @@
                             <input matInput formControlName="nom">
                         </mat-form-field>
 
-                        <mat-form-field appearance="outline" class="form-element">
+                        <mat-form-field appearance="outline" class="form-element" *ngIf="isWomen">
                             <mat-label> Nom de jeune fille
                             </mat-label>
                             <input matInput  formControlName="nom_jeune_fille">
