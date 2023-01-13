@@ -26,13 +26,13 @@ export class TokenInterceptor implements HttpInterceptor {
     // *on recupere le token
     // methode static
     const token = this._dataService.getToken()
-// console.log(token)
+    // console.log(token)
     let clone = request
 
     console.log(request.url)
 
     // * si on atteind le backend, propriete de httpRequest
-    if (request.url.includes(`${environment.API_URL}` )) {
+    if (request.url.includes(`${environment.API_URL}`)) {
 
       //* on cloner un autre headers et on ajoute 'Authorisation'
       // * car on ne peut pas modifier on ne peut pas .append
@@ -49,13 +49,16 @@ export class TokenInterceptor implements HttpInterceptor {
       // * catchError operateur rxjs,
       // ! attrape les erreurs
       catchError((error: HttpErrorResponse) => {
-        let message = " "
-        switch (error.status) {
-          case 400: message = "Badrequest, erreur Identifiant ou Mot de passe "
-            break;
-          case 401: message = "Unauthorized"
-            break;
-        }
+        let message = JSON.stringify({
+          error,
+          url: request.url
+        })
+        // switch (error.status) {
+        //   case 400: message = "Badrequest, erreur Identifiant ou Mot de passe "
+        //     break;
+        //   case 401: message = "Unauthorized"
+        //     break;
+        // }
 
         this._snackBar.open(message, 'ok', { verticalPosition: 'top' })
         // * renvoi la requete soit clone=request soit clone=requete.clone....

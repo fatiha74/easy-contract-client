@@ -19,6 +19,10 @@ export class RegisterComponent implements OnInit {
   registerForm!: FormGroup
 
   errorPass = true
+  isWomen!:any
+civilite:any[] =[
+  {value:'Madame',viewValue:'Madame'},
+  {value:'Monsieur',viewValue:'Monsieur'}]
 
   constructor(
     private _snackBar: MatSnackBar,

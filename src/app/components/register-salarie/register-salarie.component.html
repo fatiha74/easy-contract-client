@@ -1,139 +1,133 @@
-<section class="container">
-    <div class="formulaire">
-
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>Créer votre compte salarié</mat-card-title>
-            </mat-card-header>
-
-            <mat-card-content>
-                <form class="container" [formGroup]="registerForm" (ngSubmit)="onSubmit()" layout="column">
-                    <div>
-                        <!-- <mat-form-field appearance="outline" class=" form-element">
-                            <mat-label>
-                                Civilité
-                            </mat-label>
-                            <input matInput formControlName="civilite">
-                        </mat-form-field> -->
-
-                        <mat-form-field appearance="fill" >
-                            <mat-label>Civilité</mat-label>
-                            <mat-select formControlName="civilite" >
-                                <mat-option *ngFor="let item of civilite" [value]="item.value">
-                                    {{item.value}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline" class="form-element">
-                            <mat-label>
-                                Nom
-                            </mat-label>
-                            <input matInput formControlName="nom">
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline" class="form-element" *ngIf="isWomen">
-                            <mat-label> Nom de jeune fille
-                            </mat-label>
-                            <input matInput  formControlName="nom_jeune_fille">
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline" class="form-element">
-                            <mat-label>
-                                Prénom
-                            </mat-label>
-                            <input matInput formControlName="prenom">
-                        </mat-form-field>
-                    </div>
-                    <div>
-                        <mat-form-field appearance="outline" class="form-element">
-                            <mat-label>
-                                Téléphone
-                            </mat-label>
-                            <input matInput formControlName="telephone">
-                        </mat-form-field>
+<section>
+    <div class="form-container">
+        <h1>Créer votre compte salarié</h1>
+        <form class="container" [formGroup]="registerForm" (ngSubmit)="onSubmit()" layout="column">
 
 
-                        <mat-form-field appearance="outline" class="form-element">
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Civilité</mat-label>
+                    <mat-select formControlName="civilite">
+                        <mat-option *ngFor="let item of civilite" [value]="item.value">
+                            {{item.value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label>
+                        Nom
+                    </mat-label>
+                    <input matInput formControlName="nom">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-element" *ngIf="isWomen">
+                    <mat-label> Nom de jeune fille
+                    </mat-label>
+                    <input matInput formControlName="nom_jeune_fille">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label>
+                        Prénom
+                    </mat-label>
+                    <input matInput formControlName="prenom">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label>
+                        Téléphone
+                    </mat-label>
+                    <input matInput formControlName="telephone">
+                </mat-form-field>
+            </div>
+            <div>
 
-                            <mat-label>
-                                Rue
-                            </mat-label>
-                            <input matInput  formControlName="rue">
-                        </mat-form-field>
+                <mat-form-field appearance="outline" class="form-element">
 
+                    <mat-label>
+                        Rue
+                    </mat-label>
+                    <input matInput formControlName="rue">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label>
+                        Code postale
+                    </mat-label>
+                    <input matInput formControlName="cp">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label>
+                        Ville
+                    </mat-label>
+                    <input matInput formControlName="ville">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label>
+                        Email
+                    </mat-label>
+                    <input matInput formControlName="email">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label> Password
+                    </mat-label>
+                    <input matInput formControlName="mdp" required>
+                    <mat-icon matSuffix>password</mat-icon>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label> Confirme Password
+                    </mat-label>
+                    <input matInput formControlName="confirmmdp" required>
+                    <mat-icon matSuffix>password</mat-icon>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label> N° sécurité sociale
+                    </mat-label>
+                    <input matInput formControlName="num_ss">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label>Date de naissance
+                    </mat-label>
+                    <input matInput formControlName="date_naissance">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label>Lieu de naissance
+                    </mat-label>
+                    <input matInput formControlName="lieu_naissance">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label>Pays de naissance
+                    </mat-label>
+                    <input matInput formControlName="pays_naissance">
+                </mat-form-field>
+            </div>
+            <div>
+                <button mat-raised-button [disabled]="registerForm.invalid" color="primary"
+                    type="submit">Valider</button>
+            </div>
+        </form>
 
-                        <mat-form-field appearance="outline" class="form-element">
-                            <mat-label>
-                                Code postale
-                            </mat-label>
-                            <input matInput  formControlName="cp">
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline" class="form-element">
-                            <mat-label>
-                                Ville
-                            </mat-label>
-                            <input matInput  formControlName="ville">
-                        </mat-form-field>
-                    </div>
-                    <div>
-
-
-                        <mat-form-field appearance="outline" class="form-element">
-                            <mat-label>
-                                Email
-                            </mat-label>
-                            <input matInput  formControlName="email">
-                        </mat-form-field>
-
-                        <mat-form-field class="form-field" appearance="outline">
-                            <mat-label> Password
-                            </mat-label>
-                            <input matInput formControlName="mdp" required>
-                            <mat-icon matSuffix>password</mat-icon>
-                        </mat-form-field>
-
-                        <mat-form-field class="form-field" appearance="outline">
-                            <mat-label> Confirme Password
-                            </mat-label>
-                            <input matInput formControlName="confirmmdp" required>
-                            <mat-icon matSuffix>password</mat-icon>
-                        </mat-form-field>
-                    </div>
-                    <div>
-
-
-                        <mat-form-field appearance="outline" class="form-element">
-                            <mat-label> N° sécurité sociale
-                            </mat-label>
-                            <input matInput  formControlName="num_ss">
-                        </mat-form-field>
-                    </div>
-                    <div>
-                        <mat-form-field appearance="outline" class="form-element">
-                            <mat-label>Date de naissance
-                            </mat-label>
-
-                            <input matInput  formControlName="date_naissance">
-                        </mat-form-field>
-                        <mat-form-field appearance="outline" class="form-element">
-                            <mat-label>Lieu de naissance
-                            </mat-label>
-                            <input matInput  formControlName="lieu_naissance">
-                        </mat-form-field>
-                        <mat-form-field appearance="outline" class="form-element">
-                            <mat-label>Pays de naissance
-                            </mat-label>
-                            <input matInput  formControlName="pays_naissance">
-                        </mat-form-field>
-                    </div>
-                    <div>
-                        <button mat-raised-button [disabled]="registerForm.invalid" color="primary"
-                            type="submit">Valider</button>
-                    </div>
-                </form>
-            </mat-card-content>
-        </mat-card>
     </div>
 </section>
