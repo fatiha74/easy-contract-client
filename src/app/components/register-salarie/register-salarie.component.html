@@ -106,7 +106,7 @@
                 <mat-form-field appearance="outline" class="form-element">
                     <mat-label>Date de naissance
                     </mat-label>
-                    <input matInput formControlName="date_naissance">
+                    <input matInput type="date" formControlName="date_naissance">
                 </mat-form-field>
             </div>
             <div>
@@ -123,6 +123,7 @@
                     <input matInput formControlName="pays_naissance">
                 </mat-form-field>
             </div>
+
             <div>
                 <button mat-raised-button [disabled]="registerForm.invalid" color="primary"
                     type="submit">Valider</button>

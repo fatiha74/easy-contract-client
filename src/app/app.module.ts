@@ -20,6 +20,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -29,6 +30,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MesContratsComponent } from './components/mes-contrats/mes-contrats.component';
 import { MesSalariesComponent } from './components/mes-salaries/mes-salaries.component';
 import { NgModule } from '@angular/core';
+import { PadComponent } from './components/pad/pad.component';
 import { PdfComponent } from './modals/pdf/pdf.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileSalarieComponent } from './components/profile-salarie/profile-salarie.component';
@@ -57,10 +59,11 @@ import { UpdateSalarieComponent } from './modals/update-salarie/update-salarie.c
     PdfComponent,
     MesSalariesComponent,
     MesContratsComponent,
-
+    PadComponent,
 
   ],
   imports: [
+    MatProgressBarModule,
     MatSlideToggleModule,
     MatDatepickerModule,
     MatRadioModule,

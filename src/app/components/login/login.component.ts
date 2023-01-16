@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   // stock token
   tkn!: any
 
-
+isLogin=false;
 
   loginForm!: FormGroup
   // registerForm!:FormGroup
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
 
   onSubmitConnexion() {
-
+this.isLogin=true;
     // *on recupere les données du formulaire
     const form = this.loginForm.value
 

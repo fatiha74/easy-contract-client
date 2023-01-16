@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { DataService } from 'src/app/services/data.service';
 import { Entreprise } from 'src/app/models/entreprise';
 import { MatDialog } from '@angular/material/dialog';
+import SignaturePad from "signature_pad";
 import { UpdateEntrepriseComponent } from 'src/app/modals/update-entreprise/update-entreprise.component';
 
 @Component({
@@ -11,17 +12,31 @@ import { UpdateEntrepriseComponent } from 'src/app/modals/update-entreprise/upda
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
+
+
+
+
+
 export class ProfileComponent implements OnInit {
 
   myProfil!: any
   majForm!: FormGroup
   isEdit = false
+  signaturePad!: SignaturePad;
+  @ViewChild('canvas') canvasEl!: ElementRef;
+  signatureImg!: string;
+
 
   constructor(
     private _dataService: DataService,
     private _fb: FormBuilder,
     private _matDialog: MatDialog
   ) { }
+  ngOnAfterInit(){
+    this.signaturePad = new SignaturePad(this.canvasEl.nativeElement);
+
+  }
+
 
   ngOnInit(): void {
 
@@ -48,5 +63,18 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+clearPad(){
 
+}
+savePad(){
+  const base64Data = this.signaturePad.toDataURL();
+  this.signatureImg = base64Data;
+}
+
+moved(event:Event){
+
+}
+startDrawing(event:Event){
+  console.log(event);
+}
 }

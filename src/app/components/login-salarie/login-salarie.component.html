@@ -1,76 +1,49 @@
-<!-- <section>
+
 <div>
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Connexion Salarié</mat-card-title>
-
-          </mat-card-header>
-        <mat-card-content>
-
-            <form class="form" layout="column" [formGroup]="loginForm" (ngSubmit)="onSubmitConnexion()">
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input matInput placeholder='email' formControlName="email">
-                    <mat-icon matSuffix color="primary">local_post_office</mat-icon>
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input matInput placeholder="Password" formControlName="mdp">
-
-                </mat-form-field>
-
-                <div class="button">
-                    <span>
-                        <button mat-raised-button [disabled]="loginForm.invalid" color="primary"
-                            type="submit">Valider</button>
-                    </span>
-                </div>
-
-            </form>
-            <span>Vous n'avez pas encore de compte?</span><br>
-            <a routerLink="/salarie/register">Créer un compte ici</a>
-
-
-        </mat-card-content>
-    </mat-card>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a routerLink="/"><mat-icon>home</mat-icon></a>
+    </mat-toolbar-row>
+  </mat-toolbar>
 </div>
-</section> -->
+
 <div class="container">
-    <section>
-      <mat-card>
-        <mat-card-header>
-            <mat-card-title>Connexion Salarié</mat-card-title>
+  <section>
+      <mat-progress-bar mode="indeterminate" *ngIf="isLogin"></mat-progress-bar>
 
-          </mat-card-header>
-        <mat-card-content>
-      <form class="form" layout="column" [formGroup]="loginForm" (ngSubmit)="onSubmitConnexion()">
-    <div>
-        <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder='email' formControlName="email">
-           <mat-icon matSuffix color="primary">local_post_office</mat-icon>
-        </mat-form-field>
-        </div>
-    <div>
-        <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" formControlName="mdp">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Connexion Salarié</mat-card-title>
 
-        </mat-form-field>
-    </div>
-        <div class="button">
-          <span>
-            <button mat-raised-button [disabled]="loginForm.invalid" color="primary" type="submit">Valider</button>
-          </span>
-        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="form" layout="column" [formGroup]="loginForm" (ngSubmit)="onSubmitConnexion()">
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder='email' formControlName="email">
+              <mat-icon matSuffix color="primary">local_post_office</mat-icon>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password" formControlName="mdp">
 
-       </form>
-       <span>Vous n'avez pas encore de compte?</span><br>
-       <!-- <a routerLink="/salarie/register">Créer un compte ici</a> -->
-       <a routerLink="/salarie/register"> <button mat-raised-button  color="accent" type="submit">Inscription</button></a>
-       </mat-card-content>
-       </mat-card>
-      </section>
-    </div>
+            </mat-form-field>
+          </div>
+          <div class="button">
+            <span>
+              <button mat-raised-button [disabled]="loginForm.invalid" color="primary" type="submit">Valider</button>
+            </span>
+          </div>
+
+        </form>
+        <span>Vous n'avez pas encore de compte?</span><br>
+        <!-- <a routerLink="/salarie/register">Créer un compte ici</a> -->
+        <a routerLink="/salarie/register"> <button mat-raised-button color="accent"
+            type="submit">Inscription</button></a>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

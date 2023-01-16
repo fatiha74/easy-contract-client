@@ -48,7 +48,8 @@ civilite:any[] =[
        confirmmdp: ["", Validators.required],
       siret: [this.entreprise.siret, Validators.required],
       raison_sociale: [this.entreprise.raison_sociale, Validators.required],
-      code_ape: [this.entreprise.code_ape, Validators.required]
+      code_ape: [this.entreprise.code_ape, Validators.required],
+      signature:[this.entreprise.signature,Validators.required]
 
     })
 

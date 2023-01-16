@@ -12,7 +12,7 @@ import { Salarie } from 'src/app/models/salarie';
 })
 export class LoginSalarieComponent implements OnInit {
 
-
+isLogin=false;
   salarie = new Salarie()
 
   // stock token
@@ -37,6 +37,7 @@ export class LoginSalarieComponent implements OnInit {
   }
   onSubmitConnexion() {
 
+    this.isLogin=true;
     // *on recupere les données du formulaire
     const form = this.loginForm.value
 

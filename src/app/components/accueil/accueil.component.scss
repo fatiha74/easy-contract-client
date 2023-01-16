@@ -5,6 +5,10 @@ section{
   height: 100vh;
   justify-content: space-between;
 }
+a{
+  color:white;
+  background:white;
+}
 h1
 {
   text-align: center;
@@ -21,6 +25,10 @@ h1
 .button{
   display: flex;
   justify-content: space-around;
+}
+.card{
+width:60%;
+align-self: center;
 }
 
 

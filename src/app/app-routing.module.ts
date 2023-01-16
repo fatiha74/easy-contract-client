@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { AccueilComponent } from './components/accueil/accueil.component';
+import { AuthentrepriseGuard } from './helpers/authentreprise.guard';
 import { ContratComponent } from './components/contrat/contrat.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeaderSalarieComponent } from './components/header-salarie/header-salarie.component';
@@ -16,17 +17,17 @@ import { RegisterSalarieComponent } from './components/register-salarie/register
 
 const routes: Routes = [
   {
-    path: '', component:AccueilComponent
+    path: '', component:AccueilComponent, title:'Accueil'
 
   },
   {
-    path: 'entreprise/login',component:LoginComponent
+    path: 'entreprise/login',component:LoginComponent,title:'Login Entreprise'
     // children:[
     //   {path:'login,component:LoginComponent'}
     // ]
   },
   {
-    path: 'salarie/login',component:LoginSalarieComponent
+    path: 'salarie/login',component:LoginSalarieComponent,title:'Login Salarié'
     //  children:[
     //   {path:'login,component:LoginSalarieComponent'}
     //  ]
@@ -34,35 +35,35 @@ const routes: Routes = [
   {
     path: 'overview_s',component:HeaderSalarieComponent,
     children:[
-      { path: 'profil', component: ProfileSalarieComponent
+      { path: 'profil', component: ProfileSalarieComponent,title:'Profil Salarié'
     // ,canActivate: [AuthentrepriseGuard]
    },
-   { path: 'contrat', component: ProfileSalarieComponent
+   { path: 'contrat', component: ProfileSalarieComponent, title:'Contrat Salarié'
    // ,canActivate: [AuthentrepriseGuard]
   }
 
     ]
   },
   {
-    path: 'entreprise/register',component:RegisterComponent
+    path: 'entreprise/register',component:RegisterComponent, title:'Inscription Entreprise'
   },
   {
-    path: 'salarie/register',component:RegisterSalarieComponent
+    path: 'salarie/register',component:RegisterSalarieComponent, title:'Inscription Salarié'
   },
   {
     path: 'overview',component:HeaderComponent,
     children:[
       { path: 'profil', component: ProfileComponent
-      // ,canActivate: [AuthentrepriseGuard]
+       ,canActivate: [AuthentrepriseGuard]
      },
-      { path: 'addcontrat', component: ContratComponent
+      { path: 'addcontrat', component: ContratComponent,title:'Créer un contrat'
  // ,canActivate: [AuthentrepriseGuard]
     },
-      {path:'salaries',component:MesSalariesComponent
-     // ,canActivate: [AuthentrepriseGuard]
+      {path:'salaries',component:MesSalariesComponent,title:'Mes salariés'
+      ,canActivate: [AuthentrepriseGuard]
     },
-      {path:'contrats',component:MesContratsComponent
-     // ,canActivate: [AuthentrepriseGuard]
+      {path:'contrats',component:MesContratsComponent,title:'Mes contrats'
+      ,canActivate: [AuthentrepriseGuard]
     }
 
     ]

@@ -1,7 +1,10 @@
+<a routerLink="/"><mat-icon>home</mat-icon></a>
 <div class="container">
 <section>
+  <mat-progress-bar mode="indeterminate" *ngIf="isLogin"></mat-progress-bar>
+
   <mat-card>
-    <mat-card-header>
+        <mat-card-header>
         <mat-card-title>Connexion Entreprise</mat-card-title>
 
       </mat-card-header>
