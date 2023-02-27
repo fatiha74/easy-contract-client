@@ -11,7 +11,7 @@ import {MatToolbar} from '@angular/material/toolbar';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  
+
   opened = true
 
   constructor(private _dataService:DataService) { }
@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
 
 
   onDisconect() {
-
     this._dataService.clearToken()
   }
 }

@@ -2,16 +2,16 @@
   <div class="form-container">
     <h1>Créer votre compte entreprise</h1>
     <form class="container" [formGroup]="registerForm" (ngSubmit)="onSubmit()" layout="column">
-     <div>
-      <mat-form-field appearance="outline" >
-        <mat-label>Civilité</mat-label>
-        <mat-select formControlName="civilite" >
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Civilité</mat-label>
+          <mat-select formControlName="civilite">
             <mat-option *ngFor="let item of civilite" [value]="item.value">
-                {{item.viewValue}}
+              {{item.viewValue}}
             </mat-option>
-        </mat-select>
-    </mat-form-field>
-  </div>
+          </mat-select>
+        </mat-form-field>
+      </div>
       <div>
         <mat-form-field appearance="outline" class="form-element">
           <mat-label> Nom
@@ -99,9 +99,21 @@
         </mat-form-field>
       </div>
       <div>
-        <app-pad></app-pad>
-    </div>
-      <div >
+        <mat-form-field  appearance="fill">
+          <input formControlName="signature" matInput placeholder="Code signature" type="text"
+            value={{entreprise.signature}}>
+        </mat-form-field>
+      </div>
+      <div>
+        <p>Signature*</p>
+        <canvas #canvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)">
+        </canvas>
+        <div class="d-flex justify-content-around">
+          <mat-icon class="text-danger" style="cursor: pointer;" (click)="clearPad()">close</mat-icon>
+          <mat-icon class="text-success" style="cursor: pointer;" (click)="savePad()">check</mat-icon>
+        </div>
+      </div>
+      <div>
         <button mat-raised-button [disabled]="registerForm.invalid" color="primary" type="submit">Valider</button>
       </div>
 

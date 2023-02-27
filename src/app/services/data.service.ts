@@ -15,7 +15,8 @@ export class DataService {
   //* url de base pour le backend
   urlDB = `${environment.API_URL}`
 
-  constructor(private _http: HttpClient, private _router: Router) { }
+  constructor(private _http: HttpClient,
+     private _router: Router) { }
 
   // ! LOGIN ENTREPRISE
   login(loginValues: any): Observable<any> {
@@ -168,6 +169,7 @@ export class DataService {
   clearToken() {
     // * on indique quel token on clean
     localStorage.removeItem('token')
+    localStorage.removeItem('role')
     // *on redirige sur login
     this._router.navigate((['/']))
   }

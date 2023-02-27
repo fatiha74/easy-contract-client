@@ -48,9 +48,11 @@ isLogin=false;
 
       console.warn( response)
 
+      let role= response.body.role
       this.tkn = response.body.token
 
       localStorage.setItem('token', this.tkn)
+      localStorage.setItem('role',role)
        this._route.navigate(['overview_s'])
 
     })

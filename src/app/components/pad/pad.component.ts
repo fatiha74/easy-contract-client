@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 
 import SignaturePad from 'signature_pad';
 
@@ -13,6 +13,9 @@ export class PadComponent {
   signaturePad!: SignaturePad;
   @ViewChild('canvas') canvasEl!: ElementRef;
   signatureImg!: string;
+
+   // envoie de la donnée au parent
+  //  @Output() signature = new EventEmitter<any>()
   constructor() { }
 
   ngAfterViewInit() {
@@ -34,8 +37,13 @@ export class PadComponent {
   }
 
   savePad() {
+
     const base64Data = this.signaturePad.toDataURL();
     this.signatureImg = base64Data;
+
     console.log("img",this.signaturePad.toDataURL())
+
+
   }
+
 }

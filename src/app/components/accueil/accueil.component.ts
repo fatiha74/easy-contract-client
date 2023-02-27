@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatChip, MatChipList } from '@angular/material/chips';
 
 import {MatCard} from '@angular/material/card';
-import { MatFormField } from '@angular/material/form-field';
 import { Router } from '@angular/router';
 
 @Component({

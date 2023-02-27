@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { AuthentrepriseGuard } from './helpers/authentreprise.guard';
+import { AuthsalarieGuard } from './helpers/authsalarie.guard';
 import { ContratComponent } from './components/contrat/contrat.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeaderSalarieComponent } from './components/header-salarie/header-salarie.component';
@@ -33,13 +34,13 @@ const routes: Routes = [
     //  ]
   },
   {
-    path: 'overview_s',component:HeaderSalarieComponent,
+    path: 'overview_s',component:HeaderSalarieComponent,canActivate: [AuthsalarieGuard],
     children:[
       { path: 'profil', component: ProfileSalarieComponent,title:'Profil Salarié'
-    // ,canActivate: [AuthentrepriseGuard]
+     ,canActivate: [AuthsalarieGuard]
    },
    { path: 'contrat', component: ProfileSalarieComponent, title:'Contrat Salarié'
-   // ,canActivate: [AuthentrepriseGuard]
+ ,canActivate: [AuthsalarieGuard]
   }
 
     ]
@@ -51,7 +52,7 @@ const routes: Routes = [
     path: 'salarie/register',component:RegisterSalarieComponent, title:'Inscription Salarié'
   },
   {
-    path: 'overview',component:HeaderComponent,
+    path: 'overview',component:HeaderComponent  ,canActivate: [AuthentrepriseGuard],
     children:[
       { path: 'profil', component: ProfileComponent
        ,canActivate: [AuthentrepriseGuard]

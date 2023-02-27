@@ -53,9 +53,10 @@ this.isLogin=true;
     this._dataService.login(this.entreprise).subscribe((response: any) => {
 
       console.warn( response)
-
+let role=response.body.role
       this.tkn = response.body.token
       localStorage.setItem('token', this.tkn)
+      localStorage.setItem('role',role)
        this._route.navigate(['overview'])
 
     })

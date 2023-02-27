@@ -13,27 +13,23 @@ export class AuthentrepriseGuard implements CanActivate {
     private _snackBar:MatSnackBar,
     private _dataService:DataService){}
 
+   
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
 
-
-
      // * on recupere le token
      const token = this._dataService.getToken()
- 
 
-
-
-     if (token) {
+     if (token && (localStorage.getItem('role')=='true')) {
        // *
        return true;
      } else {
 
-
        this._snackBar.open("Vous n'êtes pas connecté, vous n'avez pas accès à cette page", 'ok', { verticalPosition: 'top' })
-       return this._route.navigate(['login'])
+       return this._route.navigate([''])
      }
   }
 

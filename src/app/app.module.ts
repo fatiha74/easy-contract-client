@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginSalarieComponent } from './components/login-salarie/login-salarie.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -69,6 +70,7 @@ import { UpdateSalarieComponent } from './modals/update-salarie/update-salarie.c
     MatRadioModule,
     MatSelectModule,
     MatCardModule,
+    MatChipsModule,
     MatListModule,
     MatSidenavModule,
     MatSnackBarModule,

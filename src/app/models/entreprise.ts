@@ -11,5 +11,5 @@ export class Entreprise {
   siret!:number
   raison_sociale!:string
   code_ape!:number
-  signature!:any
+  signature!:string
 }
