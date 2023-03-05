@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   //on instancie la class User
   // salarie = new Salarie()
   entreprise = new Entreprise()
-
+hide=true
   // stock token
   tkn!: any
 
@@ -36,7 +36,7 @@ isLogin=false;
     console.warn('ok')
     this.loginForm = this._fb.group({
       // id:[this.getRandomInit()],
-      email: [this.entreprise.email, Validators.required],
+      email: [this.entreprise.email, Validators.required, Validators.email],
       mdp: [this.entreprise.mdp, Validators.required]
     })
   }

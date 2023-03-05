@@ -2,52 +2,57 @@
   <div>
     <mat-toolbar color="primary">
       <mat-toolbar-row>
-       
-        <button mat-button class="example-icon" routerlink="">
-     EasyContract
-        </button>
+
+        <span>
+
+
+          <button mat-button routerlink="/home">
+            EasyContract
+          </button>
+        </span>
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
-<div class="container">
-<section>
-  <mat-progress-bar mode="indeterminate" *ngIf="isLogin"></mat-progress-bar>
+  <div class="container">
+    <section>
+      <mat-progress-bar mode="indeterminate" *ngIf="isLogin"></mat-progress-bar>
 
-  <mat-card>
+      <mat-card>
         <mat-card-header>
-        <mat-card-title>Connexion Entreprise</mat-card-title>
+          <mat-card-title>Connexion Entreprise</mat-card-title>
 
-      </mat-card-header>
-    <mat-card-content>
-  <form class="form" layout="column" [formGroup]="loginForm" (ngSubmit)="onSubmitConnexion()">
-<div>
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder='email' formControlName="email">
-       <mat-icon matSuffix color="primary">local_post_office</mat-icon>
-    </mat-form-field>
-    </div>
-<div>
-    <mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <input type="password" matInput placeholder="Password" formControlName="mdp">
+        </mat-card-header>
+        <mat-card-content>
+          <form class="form" layout="column" [formGroup]="loginForm" (ngSubmit)="onSubmitConnexion()">
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder='email' formControlName="email">
+                <mat-icon matSuffix color="primary">local_post_office</mat-icon>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="mdp"
+                  required>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="button">
+              <span>
+                <button mat-raised-button [disabled]="loginForm.invalid" color="primary" type="submit">Valider</button>
+              </span>
+            </div>
 
-    </mat-form-field>
-</div>
-    <div class="button">
-      <span>
-        <button mat-raised-button [disabled]="loginForm.invalid" color="primary" type="submit">Valider</button>
-      </span>
-    </div>
-
-   </form>
-   <span>Vous n'avez pas encore de compte?</span><br>
-   <!-- <a routerLink="/entreprise/register">Créer un compte ici</a> -->
-   <a routerLink="/entreprise/register"> <button mat-raised-button  color="accent" type="submit">Inscription</button></a>
+          </form>
+          <span>Vous n'avez pas encore de compte?</span><br>
+          <!-- <a routerLink="/entreprise/register">Créer un compte ici</a> -->
+          <a routerLink="/entreprise/register"> <button mat-raised-button color="accent"
+              type="submit">Inscription</button></a>
 
 
-   </mat-card-content>
-   </mat-card>
-  </section>
-</div>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </div>
 </section>

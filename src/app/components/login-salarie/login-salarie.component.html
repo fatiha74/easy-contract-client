@@ -32,11 +32,9 @@
           </div>
           <div>
             <mat-form-field appearance="outline">
-              <!-- <mat-label>Password</mat-label>
-              <input matInput placeholder="Password" formControlName="mdp"> -->
-              <input matInput placeholder="Password" [type]="hide ? 'mdp' : 'text'" formControlName="mdp" required>
-              <mat-icon  color="primary" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              <!-- <mat-hint *ngIf="!passwordInput.value">Enter your password</mat-hint> -->
+
+              <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="mdp" required>
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
           </div>
           <div class="button">

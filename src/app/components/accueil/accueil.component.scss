@@ -4,14 +4,19 @@ section{
   width: 100vw;
   height: 100vh;
   justify-content: space-between;
+
+
 }
 .main-container{
   height: 100vh;
+  width:100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow-x: hidden;
   overflow-y: auto;
+
+  align-self: center;
 }
 a{
   color:white;
@@ -24,26 +29,34 @@ h1
 color:#3F51B5;
 padding:5%;
 }
-.center{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-self: center;
-  width: 50%;
-  height:50%;
-}
+// .center{
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   align-self: center;
+//   width: 50%;
+//   height:50%;
+// }
 
 .button{
   display: flex;
+  // flex-wrap: wrap;
   justify-content: space-around;
   width:100%
 }
 .card{
-width:50%;
+ width:70%;
 
 align-self: center;
+
 }
 
-mat-card{
-  height:80%;
+
+button
+{
+  margin-top: 10px;
+  width:100px;
+}
+img{
+  margin-top:10px;
 }
