@@ -19,7 +19,9 @@ import { RegisterSalarieComponent } from './components/register-salarie/register
 const routes: Routes = [
   {
     path: '', component:AccueilComponent, title:'Accueil'
-
+  },
+  {
+    path: 'home', component:AccueilComponent, title:'Accueil'
   },
   {
     path: 'entreprise/login',component:LoginComponent,title:'Login Entreprise'

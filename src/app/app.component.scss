@@ -1,1 +1,15 @@
 
+main{
+  height: 100%;
+  router-outlet{
+    height: 100%;
+  }
+}
+.main-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

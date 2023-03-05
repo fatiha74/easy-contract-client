@@ -1,10 +1,14 @@
-<div>
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <button><mat-icon>home</mat-icon></button>
-    </mat-toolbar-row>
-  </mat-toolbar>
-</div>
+<section class="main-container">
+  <div>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+       
+        <button mat-button class="example-icon" routerlink="">
+     EasyContract
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
 <div class="container">
 <section>
   <mat-progress-bar mode="indeterminate" *ngIf="isLogin"></mat-progress-bar>
@@ -46,3 +50,4 @@
    </mat-card>
   </section>
 </div>
+</section>

@@ -11,8 +11,8 @@ import { Salarie } from 'src/app/models/salarie';
   styleUrls: ['./login-salarie.component.scss']
 })
 export class LoginSalarieComponent implements OnInit {
-
-isLogin=false;
+hide=true
+isLogin=false
   salarie = new Salarie()
 
   // stock token

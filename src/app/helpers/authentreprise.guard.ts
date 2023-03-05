@@ -9,9 +9,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthentrepriseGuard implements CanActivate {
-  constructor(private _route:Router,
+  constructor(
+    private _route:Router,
     private _snackBar:MatSnackBar,
-    private _dataService:DataService){}
+    private _dataService:DataService
+    ){}
 
    
 

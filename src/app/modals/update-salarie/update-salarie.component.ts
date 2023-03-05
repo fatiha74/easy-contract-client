@@ -17,7 +17,7 @@ majForm!:FormGroup
     private _fb : FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private _dataService: DataService,
-    private _matDialogRef: MatDialogRef<UpdateSalarieComponent>,
+    private _matDialogRef: MatDialogRef<UpdateSalarieComponent>
   ) { }
 
   ngOnInit(): void {

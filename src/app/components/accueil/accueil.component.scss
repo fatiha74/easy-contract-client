@@ -5,13 +5,24 @@ section{
   height: 100vh;
   justify-content: space-between;
 }
+.main-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 a{
   color:white;
   background:white;
 }
 h1
 {
+  font-size:2em;
   text-align: center;
+color:#3F51B5;
+padding:5%;
 }
 .center{
   display: flex;
@@ -25,10 +36,14 @@ h1
 .button{
   display: flex;
   justify-content: space-around;
+  width:100%
 }
 .card{
-width:60%;
+width:50%;
+
 align-self: center;
 }
 
-
+mat-card{
+  height:80%;
+}
