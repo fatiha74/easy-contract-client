@@ -32,21 +32,15 @@ export class ProfileComponent implements OnInit {
 
     // *on recupere le profile
     this._dataService.getProfile().subscribe((response: any) => {
-      console.log("getprofile", response)
-
       this.myProfil = response
-
     })
-
 
   }
   openDialog() {
     const dialogRef = this._matDialog.open(UpdateEntrepriseComponent, { data: this.myProfil })
-
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(result,"ok after close")
       if (result) {
-        console.log(result,"if")
         this.myProfil = result.data
       }
   return window.location.reload()

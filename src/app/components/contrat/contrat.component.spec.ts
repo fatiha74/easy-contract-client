@@ -21,3 +21,4 @@ describe('ContratComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

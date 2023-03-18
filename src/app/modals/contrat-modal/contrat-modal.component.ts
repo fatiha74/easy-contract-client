@@ -24,11 +24,11 @@ export class ContratModalComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log("data", this.data.value)
+    // console.log("data", this.data.value)
     this.infos = this.data.value
 
     console.log("id SALARIE", this.infos.fki_salarie)
-    
+
     this._dataService.getOneSalarie(this.infos.fki_salarie).subscribe((response: any) => {
 
       this.salarieProfil = response
@@ -39,42 +39,29 @@ export class ContratModalComponent implements OnInit {
   }
 
   onClick() {
-    console.log("-----------------------------------------", this.data.value)
+
     // *on recupere le profile
     this._dataService.createContrat(this.data.value).subscribe((response: any) => {
 
-      console.log("dans modale cree contrat", response.body.contrat_id)
-
       // * on recupere le id du contrat pour afficher le contrat de travail qui vient de se creer
       this.contratId = response.body.contrat_id
-      console.log('id contrat', this.contratId)
-
-
 
       this._dataService.getContratCree(this.contratId).subscribe((values: any) => {
 
         console.log("le contrat cree", values)
         this._matDialogRef.close()
         const dialogRef = this._matDialog.open(PdfComponent, {
-           data: values,
-           height: '800px',
-           width: '900px'
-          })
+          data: values,
+          height: '800px',
+          width: '900px'
+        })
 
         dialogRef.afterClosed().subscribe((result: any) => {
 
           // console.log(result)
-          // this._dataService.getProfile().subscribe((response: any) => {
-          //   this.myProfil = response
-          //   console.warn(response)
-          // })
-
         })
-        // ON CREE LE PDF
-      })
-      console.warn(response)
-      // pour mettre à jour dans profile
 
+      })
     })
 
   }
@@ -100,9 +87,7 @@ export class ContratModalComponent implements OnInit {
     this._matDialogRef.close()
   }
 
-  onPrint() {
-    window.print()
-  }
+
 
   monPdf() {
     `

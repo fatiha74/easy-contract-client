@@ -116,12 +116,14 @@ export class DataService {
   }
 
 
-  // ! POST le contrat
-  createContrat(values: any): Observable<any> {
-    // const headers = new HttpHeaders().append("Authorization", `${this.getToken()}`)
-    // * on recupere les infos du profile de la personne qui se connecte >>>>>>>> route profile
-    return this._http.post<any>(`${this.urlDB}/entreprise/addcontrat`, values, { observe: 'response' })
 
+  /**
+   * ! POST CONTRAT
+   * @param values
+   * @returns
+   */
+  createContrat(values: any): Observable<any> {
+    return this._http.post<any>(`${this.urlDB}/entreprise/addcontrat`, values)
   }
 
   // ! AFFICHE LE CONTRAT QUE L'ON VIENT DE CREER
